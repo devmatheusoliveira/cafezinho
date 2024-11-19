@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0g5k47v0vpol"
+path="res://.godot/imported/Wood_Arch_01.obj-8a0b427a229bf4798427b1d9fdb90cbd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Arch_01.obj-8a0b427a229bf4798427b1d9fdb90cbd.mesh"]
+
+source_file="res://assets/medieval/Models/Wood_Arch_01.obj"
+dest_files=["res://.godot/imported/Wood_Arch_01.obj-8a0b427a229bf4798427b1d9fdb90cbd.mesh", "res://.godot/imported/Wood_Arch_01.obj-8a0b427a229bf4798427b1d9fdb90cbd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

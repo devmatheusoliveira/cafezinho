@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqn6uu57cmctu"
+path="res://.godot/imported/Grey_Small_Wall_01.obj-4aa46ff8bbb826412bba72aadde895dd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Grey_Small_Wall_01.obj-4aa46ff8bbb826412bba72aadde895dd.mesh"]
+
+source_file="res://assets/medieval/Models/Grey_Small_Wall_01.obj"
+dest_files=["res://.godot/imported/Grey_Small_Wall_01.obj-4aa46ff8bbb826412bba72aadde895dd.mesh", "res://.godot/imported/Grey_Small_Wall_01.obj-4aa46ff8bbb826412bba72aadde895dd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

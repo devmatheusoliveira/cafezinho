@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bdkh6j4btq1s5"
+path="res://.godot/imported/Wood_Border_Wall_01.obj-a931342c6f0ff60025406beaf755d42c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Border_Wall_01.obj-a931342c6f0ff60025406beaf755d42c.mesh"]
+
+source_file="res://assets/medieval/Models/Wood_Border_Wall_01.obj"
+dest_files=["res://.godot/imported/Wood_Border_Wall_01.obj-a931342c6f0ff60025406beaf755d42c.mesh", "res://.godot/imported/Wood_Border_Wall_01.obj-a931342c6f0ff60025406beaf755d42c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
