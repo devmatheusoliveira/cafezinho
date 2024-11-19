@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjcbdshjfb11g"]
+
+[ext_resource type="MeshLibrary" uid="uid://dm86nikov50vy" path="res://mesh_tilemap/medieval_mesh.tres" id="1_egnb8"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0456619, -1.90735e-06, 0.0543671)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_egnb8")
+cell_size = Vector3(3, 3, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(0, 0, 1441818, 1, 0, 1441818, 1, 1, 655386, 0, 1, 655386, 2, 0, 1441818, 3, 0, 1441818, 4, 0, 49, 3, 1, 655386, 2, 1, 655386, 4, 1, 655386, 65535, 0, 1441818, 2, 2, 655399)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMapW2" type="GridMap" parent="."]
+mesh_library = ExtResource("1_egnb8")
+cell_size = Vector3(3, 2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65535, 0, 655417, 65535, 1, 655417, 65535, 2, 1441849, 1, 2, 1441849, 2, 2, 1441849, 4, 1, 57, 4, 2, 57, 1, 0, 1048633, 3, 0, 1048633, 0, 2, 1441856, 3, 2, 1441856, 65536, 1, 655386, 65537, 1, 655386, 65538, 1, 655386, 65539, 1, 655386, 65540, 1, 655386, 65539, 0, 655386, 65540, 0, 655386, 65538, 0, 655386, 65537, 0, 655386, 65536, 0, 655386, 4, 0, 21)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMapW3" type="GridMap" parent="."]
+mesh_library = ExtResource("1_egnb8")
+cell_size = Vector3(3, 2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(4, 2, 1441813, 4, 0, 1048636, 65535, 0, 1048597, 65535, 2, 655381, 0, 0, 1048636, 2, 0, 1048624)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMapW4" type="GridMap" parent="."]
+mesh_library = ExtResource("1_egnb8")
+cell_size = Vector3(3, 2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(4, 2, 1441841, 4, 0, 1048636, 65535, 0, 1048625, 65535, 2, 655409, 0, 0, 1048636, 2, 0, 46)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMapW5" type="GridMap" parent="."]
+mesh_library = ExtResource("1_egnb8")
+cell_size = Vector3(3, 2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(4, 2, 25, 4, 0, 1048601, 65535, 0, 655385, 0, 0, 1048601, 2, 0, 1048601, 3, 0, 1048601, 1, 0, 1048601, 65535, 1, 655385, 1, 2, 1441817, 2, 2, 1441817, 3, 2, 1441817, 4, 1, 25, 65535, 2, 1441817, 0, 2, 1441817)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)

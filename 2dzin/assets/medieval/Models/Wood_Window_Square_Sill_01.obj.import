@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqu7np1fr1asv"
+path="res://.godot/imported/Wood_Window_Square_Sill_01.obj-9b90c72cebfd1e1d400c34b33f8f0da1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Window_Square_Sill_01.obj-9b90c72cebfd1e1d400c34b33f8f0da1.mesh"]
+
+source_file="res://assets/medieval/Models/Wood_Window_Square_Sill_01.obj"
+dest_files=["res://.godot/imported/Wood_Window_Square_Sill_01.obj-9b90c72cebfd1e1d400c34b33f8f0da1.mesh", "res://.godot/imported/Wood_Window_Square_Sill_01.obj-9b90c72cebfd1e1d400c34b33f8f0da1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

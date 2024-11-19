@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cmpba5yrm5ran"
+path="res://.godot/imported/Wood_Triangle_01.obj-86ef0ed7437cf23cbd024c5bec3be427.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Triangle_01.obj-86ef0ed7437cf23cbd024c5bec3be427.mesh"]
+
+source_file="res://assets/medieval/Models/Wood_Triangle_01.obj"
+dest_files=["res://.godot/imported/Wood_Triangle_01.obj-86ef0ed7437cf23cbd024c5bec3be427.mesh", "res://.godot/imported/Wood_Triangle_01.obj-86ef0ed7437cf23cbd024c5bec3be427.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

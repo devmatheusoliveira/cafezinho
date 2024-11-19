@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0ycses7srw7r"
+path="res://.godot/imported/Lightpost_01.obj-e2207e45c38c907d2b01d87d9ff89aef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Lightpost_01.obj-e2207e45c38c907d2b01d87d9ff89aef.mesh"]
+
+source_file="res://assets/medieval/Models/Lightpost_01.obj"
+dest_files=["res://.godot/imported/Lightpost_01.obj-e2207e45c38c907d2b01d87d9ff89aef.mesh", "res://.godot/imported/Lightpost_01.obj-e2207e45c38c907d2b01d87d9ff89aef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

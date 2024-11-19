@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bomt4p47wnhbp"
+path="res://.godot/imported/Wood_Broken_Wall_01.obj-165dddec856c1f4812ed14371de5dbdd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wood_Broken_Wall_01.obj-165dddec856c1f4812ed14371de5dbdd.mesh"]
+
+source_file="res://assets/medieval/Models/Wood_Broken_Wall_01.obj"
+dest_files=["res://.godot/imported/Wood_Broken_Wall_01.obj-165dddec856c1f4812ed14371de5dbdd.mesh", "res://.godot/imported/Wood_Broken_Wall_01.obj-165dddec856c1f4812ed14371de5dbdd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
