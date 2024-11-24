@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://djqyc3vgya4b5"]
+
+[ext_resource type="MeshLibrary" uid="uid://y77a3noi6rlq" path="res://mesh_tilemap/paredes_medieval_mesh.tres" id="1_tvp7i"]
+[ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="2_viy2l"]
+[ext_resource type="MeshLibrary" uid="uid://btnf8cn45v7j7" path="res://mesh_tilemap/tetos_medieval_tilemap.tres" id="3_ky3co"]
+[ext_resource type="ArrayMesh" uid="uid://cob6wkpfss2x5" path="res://assets/medieval/Models/Wood_Door_01.obj" id="4_1pcvi"]
+[ext_resource type="ArrayMesh" uid="uid://cgu2t4cv04n2q" path="res://assets/medieval/Models/Stairs_Stone_01.obj" id="5_tix2m"]
+[ext_resource type="ArrayMesh" uid="uid://ba43phnbkak3a" path="res://assets/medieval/Models/Wood_Wall_Cross_01.obj" id="6_8tsbg"]
+[ext_resource type="ArrayMesh" uid="uid://cmebt88slail6" path="res://assets/medieval/Models/Wood_Railing_01.obj" id="7_nnpp0"]
+[ext_resource type="ArrayMesh" uid="uid://c4dys353au7aw" path="res://assets/medieval/Models/Plate_Wood_01.obj" id="8_pip5y"]
+[ext_resource type="ArrayMesh" uid="uid://dhgk74d0uibli" path="res://assets/medieval/Models/Banner_01.obj" id="9_u6kby"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="chao" type="GridMap" parent="."]
+mesh_library = ExtResource("2_viy2l")
+cell_size = Vector3(3, 2.2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(0, 2, 1441795, 65533, 1, 1441795, 65533, 2, 1441795, 0, 3, 1441795, 0, 1, 1441795, 0, 0, 1441795, 65535, 0, 1441795, 65534, 0, 1441795, 65533, 0, 1441795, 65534, 4, 1441795, 65535, 4, 1441795, 0, 4, 1441795, 65533, 4, 1441795, 65533, 3, 1441795, 131071, 1, 1441797, 131070, 1, 1441797, 131070, 2, 1441797, 131070, 3, 1441797, 131071, 3, 1441797, 131071, 2, 1441797, 262142, 4, 5)
+}
+metadata/_editor_floor_ = Vector3(0, 3, 0)
+
+[node name="parede" type="GridMap" parent="."]
+mesh_library = ExtResource("1_tvp7i")
+cell_size = Vector3(3, 2.2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65534, 2, 29, 0, 4, 1048604, 65534, 3, 39, 65534, 4, 39, 65535, 4, 1048613, 0, 3, 655397, 0, 2, 655397, 0, 1, 655397, 65535, 1, 1441829, 65534, 1, 1441829, 131070, 1, 1441834, 131070, 2, 42, 131070, 3, 42, 131071, 4, 1048618, 131071, 1, 1441834, 131070, 4, 42, 65536, 4, 1048600, 65536, 3, 655388, 65536, 2, 655388, 65536, 1, 655388, 196607, 3, 655399, 196607, 4, 1048615, 196606, 3, 1441831, 196606, 4, 36)
+}
+metadata/_editor_floor_ = Vector3(-2, 2, 1)
+
+[node name="teto" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.53674e-07, 0)
+mesh_library = ExtResource("3_ky3co")
+cell_size = Vector3(3, 2.2, 3)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65534, 0, 1048630, 65535, 3, 1441846, 196607, 1, 6, 196607, 2, 6, 196607, 3, 6, 196606, 1, 655366, 196606, 2, 655366, 262142, 3, 4)
+}
+metadata/_editor_floor_ = Vector3(-2, 0, 0)
+
+[node name="detalhes" type="Node3D" parent="."]
+
+[node name="WoodDoor01" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82725, 0, 5)
+mesh = ExtResource("4_1pcvi")
+skeleton = NodePath("../..")
+
+[node name="StairsStone01" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(-1.1106, 0, 0, 0, 0.981063, 0, 0, 0, 0.981063, -2.51917, 0.013854, 13.4606)
+mesh = ExtResource("5_tix2m")
+skeleton = NodePath("../..")
+
+[node name="WoodWallCross01" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(1.18707e-08, 0, -0.85911, 0, 0.995453, 0, 0.995453, 0, 1.02448e-08, -2.5687, 0, 12.9565)
+mesh = ExtResource("6_8tsbg")
+
+[node name="WoodRailing01" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(-1.1406, 0, -8.74228e-08, 0, 1, 0, 9.97141e-08, 0, -1, -2.44809, 0.253653, 13.2577)
+mesh = ExtResource("7_nnpp0")
+
+[node name="PlateWood01" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(0.830944, 0, 0, 0, 0.994307, 0, 0, 0, 0.492859, -2.48488, 2.11302, 13.4497)
+mesh = ExtResource("8_pip5y")
+
+[node name="Banner01" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -5.96321, 4.40475, 10.0194)
+mesh = ExtResource("9_u6kby")
+skeleton = NodePath("../..")

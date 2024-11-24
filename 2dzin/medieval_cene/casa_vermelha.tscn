@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://otdswgl1hhj4"]
+
+[ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="1_27g4f"]
+[ext_resource type="MeshLibrary" uid="uid://y77a3noi6rlq" path="res://mesh_tilemap/paredes_medieval_mesh.tres" id="2_32ei8"]
+[ext_resource type="MeshLibrary" uid="uid://btnf8cn45v7j7" path="res://mesh_tilemap/tetos_medieval_tilemap.tres" id="3_3aty4"]
+[ext_resource type="ArrayMesh" uid="uid://cppe8ilk3j11q" path="res://assets/medieval/Models/Shield_Red_01.obj" id="4_0y5fr"]
+[ext_resource type="ArrayMesh" uid="uid://cob6wkpfss2x5" path="res://assets/medieval/Models/Wood_Door_01.obj" id="5_js26i"]
+
+[node name="CasaVermelha" type="Node3D"]
+
+[node name="chao" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+mesh_library = ExtResource("1_27g4f")
+cell_size = Vector3(3, 2.2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65534, 0, 2, 65534, 1, 2, 65535, 1, 2, 0, 1, 2, 1, 1, 2, 1, 0, 2, 0, 0, 2, 65535, 0, 2)
+}
+
+[node name="parede" type="GridMap" parent="."]
+mesh_library = ExtResource("2_32ei8")
+cell_size = Vector3(3, 2.2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65534, 65535, 1441832, 1, 65535, 1441832, 2, 1, 1048616, 65535, 1, 1048616, 2, 65535, 655398, 2, 0, 655398, 65534, 1, 37, 65534, 0, 37, 1, 1, 1048613, 0, 1, 1048613, 0, 65535, 1441828, 65535, 65535, 1441821)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="teto" type="GridMap" parent="."]
+mesh_library = ExtResource("3_3aty4")
+cell_size = Vector3(3, 2.2, 3)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65537, 65535, 1048583, 65536, 65535, 1048583, 131071, 65535, 1048583, 65537, 0, 1441799, 65536, 0, 1441799, 131071, 0, 1441799, 131070, 0, 1441799, 131070, 65535, 1048583)
+}
+metadata/_editor_floor_ = Vector3(-2, 1, 0)
+
+[node name="detalhes" type="Node3D" parent="."]
+
+[node name="ShieldRed01" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.82056, 0.914, -2.90055)
+mesh = ExtResource("4_0y5fr")
+skeleton = NodePath("../..")
+
+[node name="WoodDoor01" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.899, 0, -3.158)
+mesh = ExtResource("5_js26i")
+
+[node name="ShieldRed02" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.784, 0.64, 2.88825)
+mesh = ExtResource("4_0y5fr")
+
+[node name="ShieldRed03" type="MeshInstance3D" parent="detalhes"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.322, 0.64, 2.85695)
+mesh = ExtResource("4_0y5fr")
+skeleton = NodePath("../ShieldRed02")
