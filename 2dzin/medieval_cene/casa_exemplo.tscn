@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cscvjnolk547r"]
+
+[ext_resource type="MeshLibrary" uid="uid://y77a3noi6rlq" path="res://mesh_tilemap/paredes_medieval_mesh.tres" id="1_usryt"]
+[ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="2_5vr5o"]
+[ext_resource type="MeshLibrary" uid="uid://btnf8cn45v7j7" path="res://mesh_tilemap/tetos_medieval_tilemap.tres" id="3_uyco3"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="parede" type="GridMap" parent="."]
+mesh_library = ExtResource("1_usryt")
+cell_size = Vector3(3, 2.2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65534, 3, 5, 0, 1, 655365, 0, 2, 655365, 0, 3, 655365, 0, 4, 1048581, 65535, 4, 1048581, 65534, 1, 1441797, 65535, 1, 1441797, 65534, 4, 13, 65534, 2, 13)
+}
+metadata/_editor_floor_ = Vector3(-2, 0, 1)
+
+[node name="chao" type="GridMap" parent="."]
+mesh_library = ExtResource("2_5vr5o")
+cell_size = Vector3(3, 2.2, 3)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(0, 2, 1441795, 65533, 1, 1441795, 65533, 2, 1441795, 0, 3, 1441795, 0, 1, 1441795, 0, 0, 1441795, 65535, 0, 1441795, 65534, 0, 1441795, 65533, 0, 1441795, 65534, 4, 1441795, 65535, 4, 1441795, 0, 4, 1441795, 65533, 4, 1441795, 65533, 3, 1441795)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="teto" type="GridMap" parent="."]
+mesh_library = ExtResource("3_uyco3")
+cell_size = Vector3(3, 2.2, 3)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(131071, 2, 7, 65534, 0, 1048630, 65535, 3, 1441846, 131071, 3, 7, 131071, 1, 7, 131070, 3, 655367, 131070, 2, 655367, 131070, 1, 655367)
+}
+metadata/_editor_floor_ = Vector3(-2, 0, 0)

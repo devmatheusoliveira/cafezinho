@@ -1,0 +1,314 @@
+[gd_scene load_steps=63 format=3 uid="uid://8yt8t5a61fr1"]
+
+[ext_resource type="ArrayMesh" uid="uid://csmaqt1no7x1a" path="res://assets/medieval/Models/Castle_Wall_01.obj" id="1_rt3fu"]
+[ext_resource type="ArrayMesh" uid="uid://clt5x1nl7wjdd" path="res://assets/medieval/Models/Grey_Arch_01.obj" id="2_ghbhu"]
+[ext_resource type="ArrayMesh" uid="uid://cwruxj8lf01be" path="res://assets/medieval/Models/Grey_Border_Wall_01.obj" id="3_oirbu"]
+[ext_resource type="ArrayMesh" uid="uid://dmjhs13i6r4vh" path="res://assets/medieval/Models/Grey_Broken_Wall_01.obj" id="4_tkr7n"]
+[ext_resource type="ArrayMesh" uid="uid://eaphn3efg2mi" path="res://assets/medieval/Models/Grey_Corner_01.obj" id="5_k6l4l"]
+[ext_resource type="ArrayMesh" uid="uid://b38jns1aospue" path="res://assets/medieval/Models/Grey_Door_Round_01.obj" id="6_80keq"]
+[ext_resource type="ArrayMesh" uid="uid://dqju2tv8bpkl2" path="res://assets/medieval/Models/Grey_Door_Square_01.obj" id="7_yswbe"]
+[ext_resource type="ArrayMesh" uid="uid://bo4kqi0hhagr4" path="res://assets/medieval/Models/Grey_Pole_01.obj" id="8_a86r0"]
+[ext_resource type="ArrayMesh" uid="uid://cco5uvr20v8sw" path="res://assets/medieval/Models/Grey_Short_Wall_01.obj" id="9_u2rq6"]
+[ext_resource type="ArrayMesh" uid="uid://r3x8leg6dq6b" path="res://assets/medieval/Models/Grey_Slanted_Pole_01.obj" id="10_xibkb"]
+[ext_resource type="ArrayMesh" uid="uid://tc0t6dlc5mf8" path="res://assets/medieval/Models/Grey_Slanted_Wall_01.obj" id="11_mvf0r"]
+[ext_resource type="ArrayMesh" uid="uid://dyjfym7crb38k" path="res://assets/medieval/Models/Grey_Small_Wall_01.obj" id="12_5e2nh"]
+[ext_resource type="ArrayMesh" uid="uid://cyvvnc03nuoft" path="res://assets/medieval/Models/Grey_Triangle_01.obj" id="13_a8dm3"]
+[ext_resource type="ArrayMesh" uid="uid://bbe6mkhsv8a24" path="res://assets/medieval/Models/Grey_Wall_01.obj" id="14_3hqua"]
+[ext_resource type="ArrayMesh" uid="uid://dhpfpwnt2r33v" path="res://assets/medieval/Models/Grey_Window_Narrow_01.obj" id="15_a8h7v"]
+[ext_resource type="ArrayMesh" uid="uid://dhioaqeeme04n" path="res://assets/medieval/Models/Grey_Window_Round_01.obj" id="16_68v0t"]
+[ext_resource type="ArrayMesh" uid="uid://cldur57vb10q" path="res://assets/medieval/Models/Grey_Window_Round_Long_01.obj" id="17_gox0k"]
+[ext_resource type="ArrayMesh" uid="uid://l8md7lxvue88" path="res://assets/medieval/Models/Grey_Window_Round_Sill_01.obj" id="18_t5f07"]
+[ext_resource type="ArrayMesh" uid="uid://dr7eb60oto7tx" path="res://assets/medieval/Models/Grey_Window_Square_01.obj" id="19_xglf8"]
+[ext_resource type="ArrayMesh" uid="uid://bc6pscdj1kvxy" path="res://assets/medieval/Models/Grey_Window_Square_Sill_01.obj" id="20_byfkp"]
+[ext_resource type="ArrayMesh" uid="uid://k52grs2wuq51" path="res://assets/medieval/Models/Plate_Corner_01.obj" id="21_04hrv"]
+[ext_resource type="ArrayMesh" uid="uid://du3rrhnjbueyo" path="res://assets/medieval/Models/Plate_Curve_01.obj" id="22_f8ldj"]
+[ext_resource type="ArrayMesh" uid="uid://orila87m8byi" path="res://assets/medieval/Models/Plate_Pavement_01.obj" id="23_6vspx"]
+[ext_resource type="ArrayMesh" uid="uid://bmcor767s4b53" path="res://assets/medieval/Models/Plate_Road_01.obj" id="24_rtni7"]
+[ext_resource type="ArrayMesh" uid="uid://dr5p6djuydpw2" path="res://assets/medieval/Models/Plate_Sidewalk_01.obj" id="25_ijdkt"]
+[ext_resource type="ArrayMesh" uid="uid://c4dys353au7aw" path="res://assets/medieval/Models/Plate_Wood_01.obj" id="26_boevw"]
+[ext_resource type="ArrayMesh" uid="uid://d4h0ujq7w15sq" path="res://assets/medieval/Models/Roof_Corner_Green_01.obj" id="27_w756n"]
+[ext_resource type="ArrayMesh" uid="uid://clyqdigkkgavi" path="res://assets/medieval/Models/Roof_Corner_Red_01.obj" id="28_3c4fc"]
+[ext_resource type="ArrayMesh" uid="uid://dtaexgqv7a34a" path="res://assets/medieval/Models/Roof_Inner_Corner_Green_01.obj" id="29_8w4my"]
+[ext_resource type="ArrayMesh" uid="uid://bnc2gfpanxly" path="res://assets/medieval/Models/Roof_Inner_Corner_Red_01.obj" id="30_tnl38"]
+[ext_resource type="ArrayMesh" uid="uid://b3rn842jb8tb" path="res://assets/medieval/Models/Roof_Point_Green_01.obj" id="31_ygleq"]
+[ext_resource type="ArrayMesh" uid="uid://d3jv2c8ydpkaj" path="res://assets/medieval/Models/Roof_Point_Red_01.obj" id="32_4to8k"]
+[ext_resource type="ArrayMesh" uid="uid://ba0xtkthuoyna" path="res://assets/medieval/Models/Roof_Slant_Green_01.obj" id="33_hgsic"]
+[ext_resource type="ArrayMesh" uid="uid://c3eb5wjixafm0" path="res://assets/medieval/Models/Roof_Slant_Red_01.obj" id="34_wrqnv"]
+[ext_resource type="ArrayMesh" uid="uid://5jjftpuwjb3e" path="res://assets/medieval/Models/Roof_Straight_Green_01.obj" id="35_vnl87"]
+[ext_resource type="ArrayMesh" uid="uid://5kdeux8stfmo" path="res://assets/medieval/Models/Roof_Straight_Red_01.obj" id="36_nv541"]
+[ext_resource type="ArrayMesh" uid="uid://biaosvycym8nv" path="res://assets/medieval/Models/Shield_Green_01.obj" id="37_816km"]
+[ext_resource type="ArrayMesh" uid="uid://cppe8ilk3j11q" path="res://assets/medieval/Models/Shield_Red_01.obj" id="38_ndfg7"]
+[ext_resource type="ArrayMesh" uid="uid://cgu2t4cv04n2q" path="res://assets/medieval/Models/Stairs_Stone_01.obj" id="39_1hvxr"]
+[ext_resource type="ArrayMesh" uid="uid://x8ehktus5jh7" path="res://assets/medieval/Models/Stairs_Wood_01.obj" id="40_wdjwq"]
+[ext_resource type="ArrayMesh" uid="uid://0le5xo7uynht" path="res://assets/medieval/Models/Wood_Arch_01.obj" id="41_4hr3l"]
+[ext_resource type="ArrayMesh" uid="uid://40rcyom4os3t" path="res://assets/medieval/Models/Wood_Border_Wall_01.obj" id="42_yhx6y"]
+[ext_resource type="ArrayMesh" uid="uid://cim1vymhwa5u0" path="res://assets/medieval/Models/Wood_Broken_Wall_01.obj" id="43_hvd71"]
+[ext_resource type="ArrayMesh" uid="uid://dlicbipjqo1fi" path="res://assets/medieval/Models/Wood_Corner_01.obj" id="44_bdj7f"]
+[ext_resource type="ArrayMesh" uid="uid://balrajmauxpol" path="res://assets/medieval/Models/Wood_Door_Round_01.obj" id="45_ogpog"]
+[ext_resource type="ArrayMesh" uid="uid://cusm4wbwj0nt3" path="res://assets/medieval/Models/Wood_Door_Square_01.obj" id="46_i7kjp"]
+[ext_resource type="ArrayMesh" uid="uid://sc7qrosrqomd" path="res://assets/medieval/Models/Wood_Pole_01.obj" id="47_pis8x"]
+[ext_resource type="ArrayMesh" uid="uid://cmebt88slail6" path="res://assets/medieval/Models/Wood_Railing_01.obj" id="48_xeoco"]
+[ext_resource type="ArrayMesh" uid="uid://cfap3bj2salln" path="res://assets/medieval/Models/Wood_Slanted_Pole_01.obj" id="49_ybfiq"]
+[ext_resource type="ArrayMesh" uid="uid://b0lms1bn2jepi" path="res://assets/medieval/Models/Wood_Slanted_Wall_01.obj" id="50_u12au"]
+[ext_resource type="ArrayMesh" uid="uid://caqxvbxysm4af" path="res://assets/medieval/Models/Wood_Small_Wall_01.obj" id="51_u3o2p"]
+[ext_resource type="ArrayMesh" uid="uid://dy20lq74fwcjy" path="res://assets/medieval/Models/Wood_Tiny_Wall_01.obj" id="52_kqs6j"]
+[ext_resource type="ArrayMesh" uid="uid://bhbwjkl4gx5yc" path="res://assets/medieval/Models/Wood_Triangle_01.obj" id="53_wqdj6"]
+[ext_resource type="ArrayMesh" uid="uid://dsl7tcu1a8285" path="res://assets/medieval/Models/Wood_Wall_01.obj" id="54_kgy4w"]
+[ext_resource type="ArrayMesh" uid="uid://ba43phnbkak3a" path="res://assets/medieval/Models/Wood_Wall_Cross_01.obj" id="55_c2sjn"]
+[ext_resource type="ArrayMesh" uid="uid://3ux85mri3354" path="res://assets/medieval/Models/Wood_Wall_Double_Cross_01.obj" id="56_04vvx"]
+[ext_resource type="ArrayMesh" uid="uid://ds524mqe273xm" path="res://assets/medieval/Models/Wood_Window_Narrow_01.obj" id="57_66gys"]
+[ext_resource type="ArrayMesh" uid="uid://cexkw61tfah6w" path="res://assets/medieval/Models/Wood_Window_Round_01.obj" id="58_n801g"]
+[ext_resource type="ArrayMesh" uid="uid://djx7hyxph4atc" path="res://assets/medieval/Models/Wood_Window_Round_Long_01.obj" id="59_qhimi"]
+[ext_resource type="ArrayMesh" uid="uid://buqvu1ippiesq" path="res://assets/medieval/Models/Wood_Window_Round_Sill_01.obj" id="60_8nh6y"]
+[ext_resource type="ArrayMesh" uid="uid://vitq5vkhldoo" path="res://assets/medieval/Models/Wood_Window_Square_01.obj" id="61_a7jpy"]
+[ext_resource type="ArrayMesh" uid="uid://dy6v0b6c7ki8x" path="res://assets/medieval/Models/Wood_Window_Square_Sill_01.obj" id="62_ul6qq"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CastleWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("1_rt3fu")
+
+[node name="GreyArch01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("2_ghbhu")
+
+[node name="GreyBorderWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("3_oirbu")
+
+[node name="GreyBrokenWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("4_tkr7n")
+
+[node name="GreyCorner01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("5_k6l4l")
+
+[node name="GreyDoorRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("6_80keq")
+
+[node name="GreyDoorSquare01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("7_yswbe")
+
+[node name="GreyPole01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("8_a86r0")
+
+[node name="GreyShortWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("9_u2rq6")
+
+[node name="GreySlantedPole01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("10_xibkb")
+
+[node name="GreySlantedWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("11_mvf0r")
+
+[node name="GreySmallWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("12_5e2nh")
+
+[node name="GreyTriangle01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("13_a8dm3")
+
+[node name="GreyWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("14_3hqua")
+
+[node name="GreyWindowNarrow01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("15_a8h7v")
+
+[node name="GreyWindowRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("16_68v0t")
+
+[node name="GreyWindowRoundLong01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("17_gox0k")
+
+[node name="GreyWindowRoundSill01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("18_t5f07")
+
+[node name="GreyWindowSquare01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("19_xglf8")
+
+[node name="GreyWindowSquareSill01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("20_byfkp")
+
+[node name="PlateCorner01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("21_04hrv")
+
+[node name="PlateCurve01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("22_f8ldj")
+
+[node name="PlatePavement01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("23_6vspx")
+
+[node name="PlateRoad01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("24_rtni7")
+
+[node name="PlateSidewalk01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("25_ijdkt")
+
+[node name="PlateWood01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("26_boevw")
+
+[node name="RoofCornerGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("27_w756n")
+
+[node name="RoofCornerRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("28_3c4fc")
+
+[node name="RoofInnerCornerGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("29_8w4my")
+
+[node name="RoofInnerCornerRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("30_tnl38")
+
+[node name="RoofPointGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("31_ygleq")
+
+[node name="RoofPointRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("32_4to8k")
+
+[node name="RoofSlantGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("33_hgsic")
+
+[node name="RoofSlantRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("34_wrqnv")
+
+[node name="RoofStraightGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("35_vnl87")
+
+[node name="RoofStraightRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("36_nv541")
+
+[node name="ShieldGreen01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("37_816km")
+
+[node name="ShieldRed01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("38_ndfg7")
+
+[node name="StairsStone01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("39_1hvxr")
+
+[node name="StairsWood01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("40_wdjwq")
+
+[node name="WoodArch01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("41_4hr3l")
+
+[node name="WoodBorderWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("42_yhx6y")
+
+[node name="WoodBrokenWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("43_hvd71")
+
+[node name="WoodCorner01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("44_bdj7f")
+
+[node name="WoodDoorRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("45_ogpog")
+
+[node name="WoodDoorSquare01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("46_i7kjp")
+
+[node name="WoodPole01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("47_pis8x")
+
+[node name="WoodRailing01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("48_xeoco")
+
+[node name="WoodSlantedPole01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("49_ybfiq")
+
+[node name="WoodSlantedWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("50_u12au")
+
+[node name="WoodSmallWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("51_u3o2p")
+
+[node name="WoodTinyWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("52_kqs6j")
+
+[node name="WoodTriangle01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("53_wqdj6")
+
+[node name="WoodWall01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("54_kgy4w")
+
+[node name="WoodWallCross01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("55_c2sjn")
+
+[node name="WoodWallDoubleCross01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.5)
+mesh = ExtResource("56_04vvx")
+
+[node name="WoodWindowNarrow01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("57_66gys")
+
+[node name="WoodWindowRound01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("58_n801g")
+
+[node name="WoodWindowRoundLong01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("59_qhimi")
+
+[node name="WoodWindowRoundSill01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("60_8nh6y")
+
+[node name="WoodWindowSquare01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("61_a7jpy")
+
+[node name="WoodWindowSquareSill01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+mesh = ExtResource("62_ul6qq")
