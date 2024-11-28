@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://ck18pvvx0k8cv"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_ctpme"]
+[ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="2_32hs4"]
+[ext_resource type="Script" path="res://characters/player.gd" id="3_d7rmo"]
+[ext_resource type="PackedScene" uid="uid://c3dbkk8nhm7dd" path="res://characters/skeleton_1.tscn" id="3_ek6ww"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_6rd8f"]
+vertices = PackedVector3Array(-6.5, 0.75, -7.5, -6.5, 0.75, 6.5, 7.5, 0.75, 6.5, 7.5, 0.75, -7.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xomye"]
+albedo_color = Color(0.234416, 0.331901, 0.794822, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gvbe1"]
+material = SubResource("StandardMaterial3D_xomye")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8red1"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ctpme")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_6rd8f")
+
+[node name="GridMap" type="GridMap" parent="NavigationRegion3D"]
+mesh_library = ExtResource("2_32hs4")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65535, 1, 1441794, 2, 1, 1441794, 2, 65534, 1441794, 65535, 65534, 1441794, 65532, 65534, 1441794, 65532, 1, 1441794, 65532, 4, 1441794, 65535, 4, 1441794, 2, 4, 1441794, 65532, 65531, 1441794, 65535, 65531, 1441794, 2, 65531, 1441794, 5, 4, 1441794, 5, 1, 1441794, 5, 65534, 1441794, 5, 65531, 1441794, 65529, 4, 1441794, 65529, 1, 1441794, 65529, 65534, 1441794, 65529, 65531, 1441794, 65529, 65528, 1441794, 65532, 65528, 1441794, 65535, 65528, 1441794, 2, 65528, 1441794, 5, 65528, 1441794)
+}
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_32hs4")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65529, 7, 1441797, 65532, 7, 1441797, 65535, 7, 1441797, 2, 7, 1441797, 5, 7, 1441797, 8, 7, 1441797, 8, 4, 1441797, 8, 1, 1441797, 8, 65534, 1441797, 8, 65528, 1441797, 8, 65531, 1441797)
+}
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04588, 1.33919, 5.3744)
+script = ExtResource("3_d7rmo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_gvbe1")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_8red1")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_ek6ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318775, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.883529, 0, 0.468377, 0, 1, 0, -0.468377, 0, 0.883529, 8.09988, 2.23611, 9.58742)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

@@ -14,3 +14,7 @@ config/name="2Dzin"
 run/main_scene="res://medieval_cene/casa_verde.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+enemies=""

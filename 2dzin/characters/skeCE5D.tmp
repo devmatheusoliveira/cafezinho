@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3dbkk8nhm7dd"]
+
+[ext_resource type="Script" path="res://skeleton_1.gd" id="1_xhepo"]
+[ext_resource type="PackedScene" uid="uid://07yx21ikgy3t" path="res://characters/Skeleton_Minion.fbx" id="2_hqg0m"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ppho7"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["enemies"]]
+script = ExtResource("1_xhepo")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ppho7")
+
+[node name="Skeleton_Minion" parent="." instance=ExtResource("2_hqg0m")]
