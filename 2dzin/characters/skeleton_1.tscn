@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://skeleton_1.gd" id="1_xhepo"]
 [ext_resource type="PackedScene" uid="uid://07yx21ikgy3t" path="res://characters/Skeleton_Minion.fbx" id="2_hqg0m"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ppho7"]
-radius = 0.404836
+[sub_resource type="BoxShape3D" id="BoxShape3D_wf260"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["enemies"]]
 script = ExtResource("1_xhepo")
@@ -12,7 +11,8 @@ script = ExtResource("1_xhepo")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_ppho7")
+transform = Transform3D(1, 0, 0, 0, 1.94475, 0, 0, 0, 1, 0, 1.12438, 0)
+shape = SubResource("BoxShape3D_wf260")
 
 [node name="Skeleton_Minion" parent="." instance=ExtResource("2_hqg0m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
