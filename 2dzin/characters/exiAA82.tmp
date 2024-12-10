@@ -18,12 +18,12 @@ material = SubResource("StandardMaterial3D_xomye")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8red1"]
 
-[sub_resource type="Curve3D" id="Curve3D_3y5yb"]
+[sub_resource type="Curve3D" id="Curve3D_303fh"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -4.68593, 0, -6.82612, 0, 0, 0, 0, 0, 0, -3.75599, 0.847656, 2.56715, 0, 0, 0, 0, 0, 0, 4.924, 0, -0.301, 0, 0, 0, 0, 0, 0, -4.68593, 0, -6.82612),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
+"points": PackedVector3Array(3.46996, -0.797914, -1.56488, -3.46996, 0.797914, 1.56488, -3.35974, 5.72205e-06, -3.66056, -2.06741, 0, -1.19021, 2.06741, 0, 1.19021, -3.31403, 5.72205e-06, 2.92151, -0.389602, 0, 1.86017, 0.389602, 0, -1.86017, 3.7375, 0.125299, 2.9883, 2.97307, 0, 2.37961, -2.97307, 0, -2.37961, 3.588, 5.72205e-06, -3.82054, 0, 0, 0, 0, 0, 0, -3.35974, 5.72205e-06, -3.66056),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
-point_count = 4
+point_count = 5
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ctpme")
@@ -57,7 +57,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04588, 1.33919, 5.3744)
 script = ExtResource("3_d7rmo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.16916, 0, 0)
 mesh = SubResource("CapsuleMesh_gvbe1")
 skeleton = NodePath("../..")
 
@@ -65,7 +64,7 @@ skeleton = NodePath("../..")
 shape = SubResource("CapsuleShape3D_8red1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.645653, -0.763462, 0.0160356, 0.0127499, 0.031774, 0.999414, -0.763524, -0.64507, 0.030249, 4.45992, 13.0477, 1.34587)
+transform = Transform3D(0.883529, 0, 0.468377, 0, 1, 0, -0.468377, 0, 0.883529, 8.09988, 2.23611, 9.58742)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.935561, 0.353165, 0, -0.353165, 0.935561, 0, 6.0162, 0)
@@ -76,11 +75,10 @@ script = ExtResource("4_hv81l")
 
 [node name="Path3D" type="Path3D" parent="NodeEsq"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.410273, 0)
-curve = SubResource("Curve3D_3y5yb")
+curve = SubResource("Curve3D_303fh")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="NodeEsq/Path3D"]
-transform = Transform3D(0.313419, 0.088805, -0.945429, -0.00362254, 0.995686, 0.0923272, 0.949584, -0.0255125, 0.3124, 1.91455, 0.293892, 0.693419)
-progress = 15.4748
+transform = Transform3D(-0.41151, 0, 0.911397, 0, 0.999988, 0, -0.911395, 0, -0.411512, -3.35974, 5.72205e-06, -3.66056)
 
 [node name="CharacterBody3D" parent="NodeEsq/Path3D/PathFollow3D" instance=ExtResource("3_ek6ww")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
