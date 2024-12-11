@@ -20,7 +20,7 @@ material = SubResource("StandardMaterial3D_xomye")
 
 [sub_resource type="Curve3D" id="Curve3D_3y5yb"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -4.68593, 0, -6.82612, 0, 0, 0, 0, 0, 0, -3.75599, 0.847656, 2.56715, 0, 0, 0, 0, 0, 0, 4.924, 0, -0.301, 0, 0, 0, 0, 0, 0, -4.68593, 0, -6.82612),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -4.68593, 0, -6.82612, 0, 0, 0, 0, 0, 0, -3.756, 0, 2.567, 0, 0, 0, 0, 0, 0, 4.924, 0, -0.301, 0, 0, 0, 0, 0, 0, -4.68593, 0, -6.82612),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -65,7 +65,8 @@ skeleton = NodePath("../..")
 shape = SubResource("CapsuleShape3D_8red1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.645653, -0.763462, 0.0160356, 0.0127499, 0.031774, 0.999414, -0.763524, -0.64507, 0.030249, 4.45992, 13.0477, 1.34587)
+transform = Transform3D(0.0999996, -0.994525, 0.0303429, 0.0127499, 0.0317741, 0.999414, -0.994906, -0.0995541, 0.0158575, 3.49646, 13.0437, -0.782275)
+fov = 85.2801
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.935561, 0.353165, 0, -0.353165, 0.935561, 0, 6.0162, 0)
@@ -79,8 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.410273, 0)
 curve = SubResource("Curve3D_3y5yb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="NodeEsq/Path3D"]
-transform = Transform3D(0.313419, 0.088805, -0.945429, -0.00362254, 0.995686, 0.0923272, 0.949584, -0.0255125, 0.3124, 1.91455, 0.293892, 0.693419)
-progress = 15.4748
+transform = Transform3D(0.56173, 0, 0.827293, 0, 0.999964, 0, -0.827293, 0, 0.56173, 0.0516077, 0, -3.60934)
+progress = 24.47
 
 [node name="CharacterBody3D" parent="NodeEsq/Path3D/PathFollow3D" instance=ExtResource("3_ek6ww")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

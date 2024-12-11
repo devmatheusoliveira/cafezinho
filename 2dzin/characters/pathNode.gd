@@ -8,8 +8,8 @@ func _ready() -> void:
 	
 	
 func _physics_process(delta: float) -> void:
-	path.progress += delta *4
 	if(globals_var.isMovingPersonagem):
+		path.progress += delta * 4
 		pass
 		
 		
