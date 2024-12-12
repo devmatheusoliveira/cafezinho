@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
+const SPEED = 10.0
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
