@@ -1,0 +1,14 @@
+[remap]
+
+importer="Godot CSS Importer"
+type="Theme"
+uid="uid://bdredca70kkn5"
+path="res://.godot/imported/button.css-055920341b7af4279c0984b2f4a253f2.tres"
+
+[deps]
+
+source_file="res://styles/button.css"
+dest_files=["res://.godot/imported/button.css-055920341b7af4279c0984b2f4a253f2.tres"]
+
+[params]
+

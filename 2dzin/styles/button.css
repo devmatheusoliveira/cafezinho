@@ -1,0 +1,23 @@
+Button {
+  font-family: url(res://styles/MedievalSharp-Regular.ttf);
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid #6b4f27;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #d2a679, #a67c52);
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+Button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.7);
+}
+
+Button:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}

@@ -14,3 +14,13 @@ config/name="2Dzin"
 run/main_scene="res://medieval_cene/casa_verde.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-css-theme/plugin.cfg")
+
+[global_group]
+
+enemies=""
+player=""
+combat_hud=""
