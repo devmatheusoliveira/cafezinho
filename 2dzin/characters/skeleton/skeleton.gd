@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 	
 	if life <= 0:
 		animation_tree.set("parameters/conditions/died", true)
+		get_tree().call_group("player","victory")
 	if(current_animation != "Idle"):
 		animation_handler()
 	elif (turn == true && current_animation == "Idle"):

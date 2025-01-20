@@ -133,7 +133,6 @@ text = "Você perdeu :("
 
 [node name="Button" type="Button" parent="Knight/InitialHUD/Derrota"]
 layout_mode = 2
-theme = ExtResource("3_j7mm5")
 theme_override_fonts/font = ExtResource("4_kafhn")
 text = "Voltar ao menu"
 
@@ -159,7 +158,6 @@ text = "Você venceu :D"
 
 [node name="Button" type="Button" parent="Knight/InitialHUD/Venceu"]
 layout_mode = 2
-theme = ExtResource("3_j7mm5")
 theme_override_fonts/font = ExtResource("4_kafhn")
 text = "Voltar ao mapa"
 

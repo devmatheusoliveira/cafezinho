@@ -4,12 +4,16 @@ extends CharacterBody3D
 @onready var anim_play = $"Knight/AnimationPlayer"
 @onready var life_bar = $InitialHUD/ProgressBar
 @onready var hbox = $InitialHUD/HBoxContainer
+@onready var derrota = $InitialHUD/Derrota
+@onready var sucess = $InitialHUD/Sucesso
+@onready var vitoria = $InitialHUD/Venceu
 var damage = 400
 var life = 600
 var defesa: bool = false
 var counter: bool = false
 var pontos_defesa = 10
 var turn = true
+var agility = 1;
 
 func _ready() -> void:
 	randomize()
@@ -20,6 +24,8 @@ func _physics_process(delta: float) -> void:
 	life_bar.set_value_no_signal(life)
 	if life <= 0:
 		animation_tree.set("parameters/conditions/died", true)
+		derrota.visible = true
+		hbox.visible = false
 	elif(current_animation != "Idle"):
 		animation_handler(current_animation)
 	
@@ -49,7 +55,12 @@ func _on_counter_attack_trigger() -> void:
 	animation_tree.set("parameters/conditions/attack", false)
 
 func _on_fugir_pressed() -> void:
-	
+	var random = randi() % 10
+	hbox.visible = false
+	if(random + agility > 5):
+		sucess.visible = true
+	else:
+		get_tree().call_group("enemies","change_turn")
 	pass # Replace with function body.
 
 func animation_handler(current_animation):
@@ -97,3 +108,7 @@ func animation_counter_handler():
 	if !counter:
 		hbox.visible = true
 		counter = false
+
+func victory():
+	vitoria.visible = true
+	pass
