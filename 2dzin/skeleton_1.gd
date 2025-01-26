@@ -9,7 +9,7 @@ var AWAIT_TIME = 4.0
 var LOCATION = 1 # Se location = 0 animação é de seguir o player, se location = 1 animação de andar
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var current_location = global_transform.origin
 	var next_location = nav_agent.get_next_path_position()
 	var new_direction = (next_location - current_location).normalized()

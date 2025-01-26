@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqb1h3gfe8snc"]
+
+[ext_resource type="Texture2D" uid="uid://c0x7cv0b7gibp" path="res://assets/level_assets/player_gui/bar_background.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bnvko58g57c83" path="res://assets/level_assets/player_gui/bar_fill.png" id="2"]
+[ext_resource type="Script" path="res://assets/level_assets/player_gui/TextureProgress.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cr3mlgp1rouqs" path="res://assets/level_assets/player_gui/text_experience.png" id="4"]
+
+[node name="ExperienceBar" type="TextureProgressBar"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -429.0
+offset_top = -33.0
+offset_right = 432.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 34.0
+value = 15.0
+texture_under = ExtResource("1")
+texture_progress = ExtResource("2")
+script = ExtResource("3")
+
+[node name="Experience" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = -86.0
+offset_right = -76.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4")

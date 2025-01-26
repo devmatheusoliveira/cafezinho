@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://ck18pvvx0k8cv"]
+[gd_scene load_steps=15 format=3 uid="uid://ck18pvvx0k8cv"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_ctpme"]
 [ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="2_32hs4"]
-[ext_resource type="Script" path="res://characters/player.gd" id="3_d7rmo"]
+[ext_resource type="Script" path="res://characters/level.gd" id="3_e776i"]
 [ext_resource type="PackedScene" uid="uid://c3dbkk8nhm7dd" path="res://characters/skeleton_1.tscn" id="3_ek6ww"]
+[ext_resource type="Script" path="res://characters/player.gd" id="3_p6s21"]
 [ext_resource type="Script" path="res://characters/bolinha.gd" id="4_swppo"]
+[ext_resource type="Script" path="res://characters/label.gd" id="6_34hmh"]
+[ext_resource type="PackedScene" uid="uid://cqb1h3gfe8snc" path="res://assets/level_assets/player_gui/ExperienceBar.tscn" id="7_mftb0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xomye"]
 albedo_color = Color(0.234416, 0.331901, 0.794822, 1)
@@ -52,7 +55,7 @@ data = {
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.96216, 1.33919, 5.3744)
-script = ExtResource("3_d7rmo")
+script = ExtResource("3_p6s21")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("CapsuleMesh_gvbe1")
@@ -60,6 +63,10 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_8red1")
+
+[node name="Node3D" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.96216, -1.33919, -5.3744)
+script = ExtResource("3_e776i")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.883529, 0, 0.468377, 0, 1, 0, -0.468377, 0, 0.883529, 8.09988, 2.23611, 9.58742)
@@ -89,3 +96,17 @@ mesh = SubResource("SphereMesh_557nl")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_ek6ww")]
 transform = Transform3D(0.217446, 0, 0.976072, 0, 1, 0, -0.976072, 0, 0.217446, 2.14577e-06, 0.318775, -3.8147e-06)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_top = 55.0
+offset_right = 861.0
+offset_bottom = 151.0
+
+[node name="ExperienceBar" parent="CanvasLayer/VBoxContainer" groups=["experience_bar"] instance=ExtResource("7_mftb0")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+script = ExtResource("6_34hmh")
