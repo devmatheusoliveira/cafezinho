@@ -1,0 +1,177 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgkr37q8dan14"]
+
+[ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="1_qu2yf"]
+[ext_resource type="PackedScene" uid="uid://cukphbe2kspel" path="res://characters/knight/knight.tscn" id="2_tth80"]
+[ext_resource type="Theme" uid="uid://bdredca70kkn5" path="res://styles/button.css" id="3_w2r8v"]
+[ext_resource type="FontFile" uid="uid://b5ninvd8rqnfe" path="res://styles/MedievalSharp-Regular.ttf" id="4_i0j3o"]
+[ext_resource type="PackedScene" uid="uid://c8lrxj1cyeaef" path="res://characters/skeleton_boss/skeleton_boss_fight.tscn" id="5_tggdq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8bg8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5lej"]
+bg_color = Color(0, 0.712712, 0.445584, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kax1o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ssge"]
+bg_color = Color(1, 0, 0, 0.529412)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_qu2yf")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(65535, 2, 3, 65532, 2, 3, 65532, 65535, 3, 65535, 65535, 3, 2, 65535, 3, 2, 2, 3, 2, 65532, 3, 65535, 65532, 3, 65532, 65532, 3, 65529, 65532, 3, 65529, 65535, 3, 65529, 2, 3, 65529, 5, 3, 65532, 5, 3, 65535, 5, 3, 2, 5, 3)
+}
+
+[node name="Knight" parent="." instance=ExtResource("2_tth80")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -1.42976, 0.285, 0.780134)
+
+[node name="InitialHUD" type="CanvasLayer" parent="Knight" groups=["combat_hud"]]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Knight/InitialHUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -85.0
+offset_right = 539.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="atacar" type="Button" parent="Knight/InitialHUD/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_w2r8v")
+theme_override_font_sizes/font_size = 48
+text = "Atacar"
+
+[node name="defender" type="Button" parent="Knight/InitialHUD/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_w2r8v")
+theme_override_font_sizes/font_size = 48
+text = "Defender"
+
+[node name="fugir" type="Button" parent="Knight/InitialHUD/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_w2r8v")
+theme_override_font_sizes/font_size = 48
+text = "Fugir"
+
+[node name="ProgressBar" type="ProgressBar" parent="Knight/InitialHUD"]
+z_index = 1
+offset_left = 17.0
+offset_top = 15.0
+offset_right = 617.0
+offset_bottom = 42.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_y8bg8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x5lej")
+max_value = 600.0
+value = 50.0
+show_percentage = false
+
+[node name="ProgressBar" type="ProgressBar" parent="Knight/InitialHUD/ProgressBar"]
+z_index = -1
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_kax1o")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6ssge")
+value = 100.0
+show_percentage = false
+
+[node name="Sucesso" type="VBoxContainer" parent="Knight/InitialHUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="texto" type="Label" parent="Knight/InitialHUD/Sucesso"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i0j3o")
+theme_override_font_sizes/font_size = 30
+text = "Você conseguiu fugir!"
+
+[node name="prosseguir" type="Button" parent="Knight/InitialHUD/Sucesso"]
+layout_mode = 2
+theme = ExtResource("3_w2r8v")
+text = "Prosseguir"
+
+[node name="Derrota" type="VBoxContainer" parent="Knight/InitialHUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Knight/InitialHUD/Derrota"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i0j3o")
+theme_override_font_sizes/font_size = 50
+text = "Você perdeu :("
+
+[node name="Button" type="Button" parent="Knight/InitialHUD/Derrota"]
+layout_mode = 2
+theme = ExtResource("3_w2r8v")
+theme_override_fonts/font = ExtResource("4_i0j3o")
+text = "Voltar ao menu"
+
+[node name="Venceu" type="VBoxContainer" parent="Knight/InitialHUD"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Knight/InitialHUD/Venceu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_i0j3o")
+theme_override_font_sizes/font_size = 50
+text = "Você venceu :D"
+
+[node name="Button" type="Button" parent="Knight/InitialHUD/Venceu"]
+layout_mode = 2
+theme = ExtResource("3_w2r8v")
+theme_override_fonts/font = ExtResource("4_i0j3o")
+text = "Voltar ao mapa"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.974047, -0.0667169, 0.216289, 0, 0.955572, 0.294757, -0.226345, -0.287107, 0.930772, -0.16422, 2.51083, 2.89987)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_energy = 2.293
+
+[node name="Skeleton" parent="." instance=ExtResource("5_tggdq")]
+transform = Transform3D(0.966707, 0, -0.255884, 0, 1, 0, 0.255884, 0, 0.966707, -0.17257, 0.28105, -1.56884)
+
+[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/atacar" to="Knight" method="_on_atacar_pressed"]
+[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/defender" to="Knight" method="_on_defender_pressed"]
+[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/fugir" to="Knight" method="_on_fugir_pressed"]
