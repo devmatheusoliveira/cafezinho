@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqb1h3gfe8snc"]
+
+[ext_resource type="Script" path="res://assets/level_assets/player_gui/TextureProgress.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cr3mlgp1rouqs" path="res://assets/level_assets/player_gui/text_experience.png" id="4"]
+
+[sub_resource type="Gradient" id="Gradient_jsr0t"]
+colors = PackedColorArray(0.108448, 0.117433, 0.1492, 1, 0.0399334, 0.0551905, 0.165383, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yl51o"]
+gradient = SubResource("Gradient_jsr0t")
+width = 600
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_vwuos"]
+colors = PackedColorArray(0.734686, 0.000712913, 0.788915, 1, 0.337408, 0.549804, 0.912647, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_akcqa"]
+gradient = SubResource("Gradient_vwuos")
+width = 600
+height = 16
+
+[node name="ExperienceBar" type="TextureProgressBar"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -429.0
+offset_top = -33.0
+offset_right = 371.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 34.0
+value = 15.0
+texture_under = SubResource("GradientTexture2D_yl51o")
+texture_progress = SubResource("GradientTexture2D_akcqa")
+script = ExtResource("3")
+
+[node name="Experience" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.0
+offset_top = -86.0
+offset_right = -76.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4")

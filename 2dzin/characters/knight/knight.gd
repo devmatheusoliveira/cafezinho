@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @onready var animation_tree = $"AnimationTree"
 @onready var anim_play = $"Knight/AnimationPlayer"
-@onready var life_bar = $InitialHUD/ProgressBar
+@onready var life_bar = $InitialHUD/MarginContainer/vida_exp/Life
 @onready var hbox = $InitialHUD/HBoxContainer
 @onready var derrota = $InitialHUD/Derrota
 @onready var sucess = $InitialHUD/Sucesso

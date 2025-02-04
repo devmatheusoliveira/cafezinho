@@ -1,20 +1,30 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhtsqyybq88b8"]
+[gd_scene load_steps=11 format=3 uid="uid://bhtsqyybq88b8"]
 
 [ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="1_xuxhf"]
 [ext_resource type="PackedScene" uid="uid://cukphbe2kspel" path="res://characters/knight/knight.tscn" id="2_jyl4o"]
 [ext_resource type="Theme" uid="uid://bdredca70kkn5" path="res://styles/button.css" id="3_u621o"]
 [ext_resource type="FontFile" uid="uid://b5ninvd8rqnfe" path="res://styles/MedievalSharp-Regular.ttf" id="4_o54kb"]
 [ext_resource type="PackedScene" uid="uid://byemuuyfe0khg" path="res://characters/goblin_boss/goblin_boss.tscn" id="5_d7p7x"]
+[ext_resource type="PackedScene" uid="uid://cqb1h3gfe8snc" path="res://assets/level_assets/player_gui/ExperienceBar.tscn" id="5_kjcxk"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8bg8"]
+[sub_resource type="Gradient" id="Gradient_s7qa1"]
+colors = PackedColorArray(0, 0, 0, 1, 0.821505, 0.185535, 0.274536, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5lej"]
-bg_color = Color(0, 0.712712, 0.445584, 1)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xkuda"]
+gradient = SubResource("Gradient_s7qa1")
+width = 800
+height = 32
+fill_to = Vector2(0.00970874, 0)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kax1o"]
+[sub_resource type="Gradient" id="Gradient_2374v"]
+colors = PackedColorArray(0, 0.898039, 0, 1, 0.227561, 0.642798, 0.364352, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ssge"]
-bg_color = Color(1, 0, 0, 0.529412)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rswga"]
+gradient = SubResource("Gradient_2374v")
+width = 800
+height = 32
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
 
 [node name="Node3D" type="Node3D"]
 
@@ -61,28 +71,6 @@ layout_mode = 2
 theme = ExtResource("3_u621o")
 theme_override_font_sizes/font_size = 48
 text = "Fugir"
-
-[node name="ProgressBar" type="ProgressBar" parent="Knight/InitialHUD"]
-z_index = 1
-offset_left = 17.0
-offset_top = 15.0
-offset_right = 617.0
-offset_bottom = 42.0
-theme_override_styles/background = SubResource("StyleBoxEmpty_y8bg8")
-theme_override_styles/fill = SubResource("StyleBoxFlat_x5lej")
-max_value = 600.0
-value = 50.0
-show_percentage = false
-
-[node name="ProgressBar" type="ProgressBar" parent="Knight/InitialHUD/ProgressBar"]
-z_index = -1
-layout_mode = 0
-offset_right = 600.0
-offset_bottom = 27.0
-theme_override_styles/background = SubResource("StyleBoxEmpty_kax1o")
-theme_override_styles/fill = SubResource("StyleBoxFlat_6ssge")
-value = 100.0
-show_percentage = false
 
 [node name="Sucesso" type="VBoxContainer" parent="Knight/InitialHUD"]
 visible = false
@@ -162,6 +150,27 @@ layout_mode = 2
 theme = ExtResource("3_u621o")
 theme_override_fonts/font = ExtResource("4_o54kb")
 text = "Voltar ao mapa"
+
+[node name="MarginContainer" type="MarginContainer" parent="Knight/InitialHUD"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="vida_exp" type="VBoxContainer" parent="Knight/InitialHUD/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Life" type="TextureProgressBar" parent="Knight/InitialHUD/MarginContainer/vida_exp"]
+layout_mode = 2
+max_value = 600.0
+value = 50.0
+texture_under = SubResource("GradientTexture2D_xkuda")
+texture_progress = SubResource("GradientTexture2D_rswga")
+
+[node name="ExperienceBar" parent="Knight/InitialHUD/MarginContainer/vida_exp" instance=ExtResource("5_kjcxk")]
+layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.974047, -0.0667169, 0.216289, 0, 0.955572, 0.294757, -0.226345, -0.287107, 0.930772, -0.16422, 2.51083, 2.89987)
