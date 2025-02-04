@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://eijkfffw4tib"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_i14ei"]
+[ext_resource type="FontFile" uid="uid://cd4p2xnoxudw2" path="res://Fonts/ChunkFive-Regular.otf" id="2_rr3gf"]
+
+[sub_resource type="Theme" id="Theme_j5b1t"]
+default_font = ExtResource("2_rr3gf")
+default_font_size = 31
+
+[node name="Main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i14ei")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = -50.5
+offset_right = 91.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jogar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_j5b1t")
+text = "Jogar"
+
+[node name="Opcoes" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rr3gf")
+text = "Opções"
+
+[node name="Sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rr3gf")
+text = "Sair"
+
+[connection signal="pressed" from="VBoxContainer/Jogar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Opcoes" to="." method="_on_opcoes_pressed"]
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]
