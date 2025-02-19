@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgby5xeq0xhfo"]
+
+[ext_resource type="PackedScene" uid="uid://opmll70pmg4b" path="res://assets/nature/FBX format/tree_pineDefaultA.fbx" id="1_bohqi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_do7sj"]
+size = Vector3(3.10155, 1.35376, 2.21347)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="tree_pineDefaultA" parent="." instance=ExtResource("1_bohqi")]
+
+[node name="tree_pineDefaultA2" parent="tree_pineDefaultA" instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.423987, -0.00633633, 0.207777)
+
+[node name="tree_pineDefaultA2" parent="." instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.538018)
+
+[node name="tree_pineDefaultA3" parent="." instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.972248, 2.38419e-07, 0.0393164)
+
+[node name="tree_pineDefaultA2" parent="tree_pineDefaultA3" instance=ExtResource("1_bohqi")]
+
+[node name="tree_pineDefaultA3" parent="tree_pineDefaultA3" instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.27712)
+
+[node name="tree_pineDefaultA2" parent="tree_pineDefaultA3/tree_pineDefaultA3" instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.423987, -0.00633633, 0.207777)
+
+[node name="tree_pineDefaultA4" parent="tree_pineDefaultA3" instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.81513)
+
+[node name="tree_pineDefaultA5" parent="tree_pineDefaultA3" instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.972248, 2.38419e-07, 1.31643)
+
+[node name="tree_pineDefaultA2" parent="tree_pineDefaultA3/tree_pineDefaultA5" instance=ExtResource("1_bohqi")]
+
+[node name="tree_pineDefaultA6" parent="tree_pineDefaultA3" instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.348544, 0, 1.27712)
+
+[node name="tree_pineDefaultA8" parent="tree_pineDefaultA3" instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.888033, 0, 1.27712)
+
+[node name="tree_pineDefaultA4" parent="." instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.348544, 0, 0)
+
+[node name="tree_pineDefaultA5" parent="." instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.711, 0, 0.446)
+
+[node name="tree_pineDefaultA6" parent="." instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.888033, 0, 0)
+
+[node name="tree_pineDefaultA7" parent="." instance=ExtResource("1_bohqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.829108, 0, 1.01026)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.582451, 0.305298, 0.822159)
+shape = SubResource("BoxShape3D_do7sj")

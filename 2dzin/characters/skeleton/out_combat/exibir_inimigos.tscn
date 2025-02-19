@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck18pvvx0k8cv"]
+
+[ext_resource type="Script" path="res://characters/skeleton/out_combat/world.gd" id="1_v0jjb"]
+[ext_resource type="Script" path="res://characters/skeleton/out_combat/bolinha.gd" id="5_x4dlp"]
+[ext_resource type="PackedScene" uid="uid://bi215rs0y011j" path="res://characters/skeleton/out_combat/skeleton_1.tscn" id="6_drko8"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_6rd8f"]
+vertices = PackedVector3Array(-6.5, 0.75, -7.5, -6.5, 0.75, 6.5, 7.5, 0.75, 6.5, 7.5, 0.75, -7.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="Curve3D" id="Curve3D_x5xy4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.05129, 0, -6.84816, 0, 0, 0, 0, 0, 0, -5.9348, 0, 5.84146, 0, 0, 0, 0, 0, 0, 7.23636, 0, 5.93533, 0, 0, 0, 0, 0, 0, 7.15182, 0, -7.058, 0, 0, 0, 0, 0, 0, -6.05619, 0, -6.90128),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="SphereMesh" id="SphereMesh_557nl"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_v0jjb")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 0, 1, 0, -0.23686, -2.38419e-07)
+navigation_mesh = SubResource("NavigationMesh_6rd8f")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.311678, 0)
+curve = SubResource("Curve3D_x5xy4")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.999951, 0, -0.00917955, 0, 1, 0, 0.00917955, 0, -0.999951, -6.05129, 0, -6.84816)
+
+[node name="Bolinha" type="CharacterBody3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(-0.99979, 0, -0.0205239, 0, 1, 0, 0.0205239, 0, -0.99979, 0, 0, 0)
+visible = false
+script = ExtResource("5_x4dlp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D/Bolinha"]
+mesh = SubResource("SphereMesh_557nl")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("6_drko8")]
+transform = Transform3D(0.0652338, 0, 0.292822, 0, 0.3, 0, -0.292822, 0, 0.0652338, 2.14577e-06, 0.318775, -3.8147e-06)

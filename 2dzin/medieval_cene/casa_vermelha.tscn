@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://otdswgl1hhj4"]
+[gd_scene load_steps=7 format=3 uid="uid://otdswgl1hhj4"]
 
 [ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="1_27g4f"]
 [ext_resource type="MeshLibrary" uid="uid://y77a3noi6rlq" path="res://mesh_tilemap/paredes_medieval_mesh.tres" id="2_32ei8"]
 [ext_resource type="MeshLibrary" uid="uid://btnf8cn45v7j7" path="res://mesh_tilemap/tetos_medieval_tilemap.tres" id="3_3aty4"]
 [ext_resource type="ArrayMesh" uid="uid://cppe8ilk3j11q" path="res://assets/medieval/Models/Shield_Red_01.obj" id="4_0y5fr"]
 [ext_resource type="ArrayMesh" uid="uid://cob6wkpfss2x5" path="res://assets/medieval/Models/Wood_Door_01.obj" id="5_js26i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mjlhh"]
+size = Vector3(12.1816, 3.37793, 5.84814)
 
 [node name="CasaVermelha" type="Node3D"]
 
@@ -58,3 +61,9 @@ mesh = ExtResource("4_0y5fr")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.322, 0.64, 2.85695)
 mesh = ExtResource("4_0y5fr")
 skeleton = NodePath("../ShieldRed02")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0361862, 1.39209, -0.0275879)
+shape = SubResource("BoxShape3D_mjlhh")

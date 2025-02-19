@@ -8,7 +8,7 @@ extends CharacterBody3D
 @onready var sucess = $InitialHUD/Sucesso
 @onready var vitoria = $InitialHUD/Venceu
 var damage = 400
-var life = 600
+var life = 1200
 var defesa: bool = false
 var counter: bool = false
 var pontos_defesa = 10
@@ -112,3 +112,15 @@ func animation_counter_handler():
 func victory():
 	vitoria.visible = true
 	pass
+
+
+func _on_prosseguir_pressed() -> void:
+	var TheRoot = get_node('/root')
+	var ThisScene = get_node('/root/Node3D')
+	
+	TheRoot.remove_child(ThisScene)
+	ThisScene.call_deferred("free")
+	
+	var NextScene = AutoloadScript.previous_scene
+	TheRoot.add_child(NextScene)
+	pass # Replace with function body.

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://x7hw8tx5scpn"]
+
+[ext_resource type="PackedScene" uid="uid://u5nnetx4x4wo" path="res://nature_cene/natureza.tscn" id="1_uash3"]
+[ext_resource type="PackedScene" uid="uid://dnpluas83s5en" path="res://characters/knight/walking/player.tscn" id="2_u378v"]
+
+[sub_resource type="Environment" id="Environment_ll1d1"]
+background_mode = 1
+background_color = Color(0.782254, 0.899631, 0.999039, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+fog_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="cenario" parent="." instance=ExtResource("1_uash3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20938, 0, -2.50943)
+
+[node name="Player" parent="." instance=ExtResource("2_u378v")]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, -0.394664, 0.121919, 4.86934)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ll1d1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.401676, 0.915782, 0, -0.915782, -0.401676, 0, 0, 0)

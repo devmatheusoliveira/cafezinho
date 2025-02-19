@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://cr13rdyhvx0xp"]
+
+[ext_resource type="PackedScene" uid="uid://bugiwjneic4cb" path="res://assets/nature/FBX format/tree_plateau_dark.fbx" id="1_ik0ce"]
+[ext_resource type="PackedScene" uid="uid://declc0hapcah5" path="res://assets/nature/FBX format/tree_simple_dark.fbx" id="2_gp22d"]
+[ext_resource type="PackedScene" uid="uid://chf6xrvaw0t6u" path="res://assets/nature/FBX format/tree_small.fbx" id="3_6cfst"]
+[ext_resource type="PackedScene" uid="uid://cwtjqqtyl18d8" path="res://assets/nature/FBX format/tree_tall.fbx" id="4_ijcj0"]
+[ext_resource type="PackedScene" uid="uid://cxnsho7qq6er5" path="res://assets/nature/FBX format/tree_tall_dark.fbx" id="5_fs8w4"]
+[ext_resource type="PackedScene" uid="uid://6f8c2u6vhhwn" path="res://assets/nature/FBX format/tree_pineRoundF.fbx" id="6_jmrgi"]
+[ext_resource type="PackedScene" uid="uid://cmh67fnamm6fd" path="res://assets/nature/FBX format/tree_pineDefaultB.fbx" id="7_4p5ur"]
+[ext_resource type="PackedScene" uid="uid://dw53263jdmy3b" path="res://assets/nature/FBX format/tree_pineRoundB.fbx" id="8_hpsfw"]
+[ext_resource type="PackedScene" uid="uid://d1ne4alfu54us" path="res://assets/nature/FBX format/tree_pineRoundA.fbx" id="9_tyaks"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u34w4"]
+size = Vector3(1.53601, 0.574219, 2.48727)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="tree_plateau_dark" parent="." instance=ExtResource("1_ik0ce")]
+
+[node name="tree_simple_dark" parent="." instance=ExtResource("2_gp22d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247743, 0, -0.477883)
+
+[node name="tree_small" parent="." instance=ExtResource("3_6cfst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.503849, 0, 0.0714699)
+
+[node name="tree_tall" parent="." instance=ExtResource("4_ijcj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.704816, 1.19209e-07, -0.335099)
+
+[node name="tree_tall_dark" parent="." instance=ExtResource("5_fs8w4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.231565, 0, 0.458352)
+
+[node name="tree_pineRoundF" parent="." instance=ExtResource("6_jmrgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.339989, 0, 0.530858)
+
+[node name="tree_pineDefaultB" parent="." instance=ExtResource("7_4p5ur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.193923, 0, -0.579726)
+
+[node name="tree_pineRoundB" parent="." instance=ExtResource("8_hpsfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276916, 0, -1.05036)
+
+[node name="tree_pineRoundB2" parent="." instance=ExtResource("8_hpsfw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.838152, 0, -0.737107)
+
+[node name="tree_pineRoundA" parent="." instance=ExtResource("9_tyaks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14094, 0, 1.22446)
+
+[node name="tree_pineRoundA2" parent="." instance=ExtResource("9_tyaks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.869853, 0, 0.286182)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.268005, 0.212891, 0.0531464)
+shape = SubResource("BoxShape3D_u34w4")

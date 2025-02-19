@@ -4,10 +4,23 @@ extends TextureProgressBar
 var progress_bg_texture: Texture  # Para o fundo da ProgressBar
 var progress_fill_texture: Texture  # Para o preenchimento da ProgressBar
 
+#func _ready() -> void:
+	#
+	#
+	#value = AutoloadScript.exp
+	#max_value = AutoloadScript.exp_total
+
+
+func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return  # Evita chamar o código no editor
+	value = AutoloadScript.get_exp()
+	max_value = AutoloadScript.get_exp_total()
+
 # Inicializa o valor de progresso
 func initialize(current, maximum):
-	value = current
-	max_value = maximum  # Ajusta o valor máximo
+	value = AutoloadScript.get_exp()
+	max_value = AutoloadScript.get_exp_total()  # Ajusta o valor máximo
 	
 	# Define as texturas da barra de progresso
 	self.texture_progress = progress_fill_texture  # Define a textura de preenchimento

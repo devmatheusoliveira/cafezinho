@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhldf52itf3tt"]
+
+[ext_resource type="PackedScene" uid="uid://dii0uglxihkwi" path="res://assets/nature/FBX format/tree_palmBend.fbx" id="1_kfy61"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0cre8"]
+size = Vector3(1.36377, 1.94543, 1.47571)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="tree_palmBend" parent="." instance=ExtResource("1_kfy61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0161266, 0, -0.0217228)
+
+[node name="tree_palmBend2" parent="tree_palmBend" instance=ExtResource("1_kfy61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.595908, 0, -0.0217228)
+
+[node name="tree_palmBend2" parent="tree_palmBend/tree_palmBend2" instance=ExtResource("1_kfy61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0161266, 0, 0.670783)
+
+[node name="tree_palmBend2" parent="tree_palmBend/tree_palmBend2/tree_palmBend2" instance=ExtResource("1_kfy61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67313, 0, 0.181215)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree_palmBend"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_palmBend/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181885, 0.472717, 0.237854)
+shape = SubResource("BoxShape3D_0cre8")

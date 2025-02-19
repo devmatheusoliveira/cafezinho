@@ -11,7 +11,7 @@
 size = Vector3(168.952, 1.27979, 145.489)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lljgn"]
-size = Vector3(2.14637, 7.00647, 123.483)
+size = Vector3(0.849674, 7.00647, 124.332)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tkue5"]
 size = Vector3(126.203, 7.96729, 1.62)
@@ -20,7 +20,7 @@ size = Vector3(126.203, 7.96729, 1.62)
 size = Vector3(1, 12.0763, 129.405)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uuxfx"]
-size = Vector3(128.331, 2.1889, 1)
+size = Vector3(128.331, 7.69894, 1)
 
 [node name="CidadeMedieval" type="Node3D"]
 
@@ -55,7 +55,7 @@ metadata/_editor_floor_ = Vector3(0, -7, 0)
 [node name="StaticBody3D" type="StaticBody3D" parent="Paredes"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Paredes/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999588, 0.0287067, 0, -0.0287067, 0.999588, -61.174, 2.50743, -0.172417)
+transform = Transform3D(1, 0, 0, 0, 0.999588, 0.0287067, 0, -0.0287067, 0.999588, -60.5257, 2.51962, 0.252007)
 shape = SubResource("BoxShape3D_lljgn")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Paredes/StaticBody3D"]
@@ -67,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.6758, 1.87071, 4.20985)
 shape = SubResource("BoxShape3D_1lufc")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Paredes/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98184, 4.05298, 59.7044)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98184, 3.59641, 59.7044)
 shape = SubResource("BoxShape3D_uuxfx")
 
 [node name="Casas_Fileira1" type="Node3D" parent="."]

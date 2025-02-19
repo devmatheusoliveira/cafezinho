@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://rrmbx5vuycxl"]
+
+[ext_resource type="Script" path="res://levels/cidade_medieval.gd" id="1_7gcig"]
+[ext_resource type="PackedScene" uid="uid://dyyqequcy81tu" path="res://medieval_cene/Cidade+Medieval.tscn" id="1_at3sr"]
+[ext_resource type="PackedScene" uid="uid://ck18pvvx0k8cv" path="res://characters/skeleton/out_combat/exibir_inimigos.tscn" id="2_1s8m3"]
+[ext_resource type="PackedScene" uid="uid://dnpluas83s5en" path="res://characters/knight/walking/player.tscn" id="3_txn1a"]
+
+[node name="CidadeMedieval" type="Node3D"]
+script = ExtResource("1_7gcig")
+
+[node name="CidadeMedieval" parent="." instance=ExtResource("1_at3sr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16108, 0, 0.353379)
+
+[node name="Node3D" parent="." instance=ExtResource("2_1s8m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47745, -0.0455028, 1.83762)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.868709, 0.495322, 0, -0.495322, 0.868709, 0, 8.31236, 13.9789)
+
+[node name="Player" parent="." instance=ExtResource("3_txn1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 4)

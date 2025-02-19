@@ -1,30 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://web5fle4fkm5"]
+[gd_scene load_steps=5 format=3 uid="uid://web5fle4fkm5"]
 
 [ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="1_ly4ij"]
 [ext_resource type="PackedScene" uid="uid://cukphbe2kspel" path="res://characters/knight/knight.tscn" id="2_o028u"]
-[ext_resource type="Theme" uid="uid://bdredca70kkn5" path="res://styles/button.css" id="3_j7mm5"]
-[ext_resource type="FontFile" uid="uid://b5ninvd8rqnfe" path="res://styles/MedievalSharp-Regular.ttf" id="4_kafhn"]
-[ext_resource type="PackedScene" uid="uid://gvk0w03t2s80" path="res://characters/skeleton/skeleton.tscn" id="4_m70cg"]
-[ext_resource type="PackedScene" uid="uid://cqb1h3gfe8snc" path="res://assets/level_assets/player_gui/ExperienceBar.tscn" id="5_k2rws"]
-
-[sub_resource type="Gradient" id="Gradient_ejkcj"]
-colors = PackedColorArray(0, 0, 0, 1, 0.821505, 0.185535, 0.274536, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1x0gd"]
-gradient = SubResource("Gradient_ejkcj")
-width = 800
-height = 32
-fill_to = Vector2(0.00970874, 0)
-
-[sub_resource type="Gradient" id="Gradient_7fcii"]
-colors = PackedColorArray(0, 0.898039, 0, 1, 0.227561, 0.642798, 0.364352, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_emdqu"]
-gradient = SubResource("Gradient_7fcii")
-width = 800
-height = 32
-fill_from = Vector2(1, 0)
-fill_to = Vector2(0, 0)
+[ext_resource type="PackedScene" uid="uid://bernt3uf2ghh3" path="res://basic_hud.tscn" id="3_57w3c"]
+[ext_resource type="PackedScene" uid="uid://gvk0w03t2s80" path="res://characters/skeleton/in_combat/skeleton.tscn" id="4_m70cg"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -41,136 +20,7 @@ data = {
 [node name="Knight" parent="." instance=ExtResource("2_o028u")]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -1.42976, 0.285, 0.780134)
 
-[node name="InitialHUD" type="CanvasLayer" parent="Knight" groups=["combat_hud"]]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Knight/InitialHUD"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -85.0
-offset_right = 539.0
-offset_bottom = -10.0
-grow_vertical = 0
-theme_override_constants/separation = 10
-
-[node name="atacar" type="Button" parent="Knight/InitialHUD/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_j7mm5")
-theme_override_font_sizes/font_size = 48
-text = "Atacar"
-
-[node name="defender" type="Button" parent="Knight/InitialHUD/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_j7mm5")
-theme_override_font_sizes/font_size = 48
-text = "Defender"
-
-[node name="fugir" type="Button" parent="Knight/InitialHUD/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_j7mm5")
-theme_override_font_sizes/font_size = 48
-text = "Fugir"
-
-[node name="Sucesso" type="VBoxContainer" parent="Knight/InitialHUD"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="texto" type="Label" parent="Knight/InitialHUD/Sucesso"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_kafhn")
-theme_override_font_sizes/font_size = 30
-text = "Você conseguiu fugir!"
-
-[node name="prosseguir" type="Button" parent="Knight/InitialHUD/Sucesso"]
-layout_mode = 2
-theme = ExtResource("3_j7mm5")
-text = "Prosseguir"
-
-[node name="Derrota" type="VBoxContainer" parent="Knight/InitialHUD"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Knight/InitialHUD/Derrota"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_kafhn")
-theme_override_font_sizes/font_size = 50
-text = "Você perdeu :("
-
-[node name="Button" type="Button" parent="Knight/InitialHUD/Derrota"]
-layout_mode = 2
-theme = ExtResource("3_j7mm5")
-theme_override_fonts/font = ExtResource("4_kafhn")
-text = "Voltar ao menu"
-
-[node name="Venceu" type="VBoxContainer" parent="Knight/InitialHUD"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Knight/InitialHUD/Venceu"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_kafhn")
-theme_override_font_sizes/font_size = 50
-text = "Você venceu :D"
-
-[node name="Button" type="Button" parent="Knight/InitialHUD/Venceu"]
-layout_mode = 2
-theme = ExtResource("3_j7mm5")
-theme_override_fonts/font = ExtResource("4_kafhn")
-text = "Voltar ao mapa"
-
-[node name="MarginContainer" type="MarginContainer" parent="Knight/InitialHUD"]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-
-[node name="vida_exp" type="VBoxContainer" parent="Knight/InitialHUD/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-
-[node name="Life" type="TextureProgressBar" parent="Knight/InitialHUD/MarginContainer/vida_exp"]
-layout_mode = 2
-max_value = 600.0
-value = 50.0
-texture_under = SubResource("GradientTexture2D_1x0gd")
-texture_progress = SubResource("GradientTexture2D_emdqu")
-
-[node name="ExperienceBar" parent="Knight/InitialHUD/MarginContainer/vida_exp" instance=ExtResource("5_k2rws")]
-layout_mode = 2
-size_flags_horizontal = 0
+[node name="InitialHUD" parent="Knight" instance=ExtResource("3_57w3c")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.974047, -0.0667169, 0.216289, 0, 0.955572, 0.294757, -0.226345, -0.287107, 0.930772, -0.16422, 2.51083, 2.89987)
@@ -180,7 +30,3 @@ light_energy = 2.293
 
 [node name="Skeleton" parent="." instance=ExtResource("4_m70cg")]
 transform = Transform3D(0.92857, 0, -0.371157, 0, 1, 0, 0.371157, 0, 0.92857, -0.00181365, 0.25, -1.40015)
-
-[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/atacar" to="Knight" method="_on_atacar_pressed"]
-[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/defender" to="Knight" method="_on_defender_pressed"]
-[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/fugir" to="Knight" method="_on_fugir_pressed"]
