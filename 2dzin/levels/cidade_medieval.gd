@@ -1,7 +1,6 @@
 extends Node3D
 
 @onready var player = $Player
-@onready var bolinha = $Node3D/Path3D/PathFollow3D/Bolinha
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

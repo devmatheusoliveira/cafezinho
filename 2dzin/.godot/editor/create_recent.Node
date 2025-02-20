@@ -1,0 +1,12 @@
+CollisionShape3D
+StaticBody3D
+CanvasLayer
+Node3D
+DirectionalLight3D
+WorldEnvironment
+RigidBody3D
+Timer
+Camera3D
+SpringArm3D
+AnimationTree
+CharacterBody3D
