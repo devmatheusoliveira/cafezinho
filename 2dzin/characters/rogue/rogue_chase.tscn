@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://det8sahhscsup"]
+
+[ext_resource type="Script" path="res://characters/skeleton/out_combat/bolinha.gd" id="1_adcp5"]
+[ext_resource type="Script" path="res://characters/rogue/rogue_chase_node.gd" id="1_p1t6a"]
+[ext_resource type="PackedScene" uid="uid://swdpawmqdn8c" path="res://characters/rogue/rogue.tscn" id="2_4ewtm"]
+
+[sub_resource type="Curve3D" id="Curve3D_j55yl"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3.27629, 0.244025, -6.84816, 0, 0, 0, 0, 0, 0, -3.42617, 0.247192, 4.40664, 0, 0, 0, 0, 0, 0, 3.84199, 0.318942, 4.37315, 0, 0, 0, 0, 0, 0, 3.80246, 0.172508, -6.37581, 0, 0, 0, 0, 0, 0, -3.28886, 0.263667, -6.90128),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="SphereMesh" id="SphereMesh_6cpxr"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ax5qw"]
+vertices = PackedVector3Array(-4.23785, 0.497323, -6.19224, -4.23785, 0.497323, 5.80776, 3.76215, 0.497323, 5.80776, 3.76215, 0.497323, -6.19224)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[node name="RogueChase" type="Node3D"]
+script = ExtResource("1_p1t6a")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.311678, 0)
+curve = SubResource("Curve3D_j55yl")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.999888, 3.74662e-06, 0.0133156, 3.41053e-13, 0.999997, -0.000281358, -0.0133156, -0.000281339, -0.999887, -3.27629, 0.244025, -6.84816)
+
+[node name="Bolinha" type="CharacterBody3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(-0.99979, 0, -0.0205239, 0, 1, 0, 0.0205239, 0, -0.99979, 0, 0, 0)
+visible = false
+script = ExtResource("1_adcp5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D/Bolinha"]
+mesh = SubResource("SphereMesh_6cpxr")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_4ewtm")]
+transform = Transform3D(0.0654429, 0, 0.292775, 0, 0.3, 0, -0.292775, 0, 0.0654429, 0, 0, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.373, -0.449437, -0.792)
+navigation_mesh = SubResource("NavigationMesh_ax5qw")

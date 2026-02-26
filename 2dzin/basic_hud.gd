@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+@onready var life_bar = $MarginContainer/vida_exp/Life
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,6 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	life_bar.max_value = AutoloadScript.max_hp
+	life_bar.value = AutoloadScript.current_life
 	pass
 
 
@@ -31,9 +33,11 @@ func _on_prosseguir_pressed() -> void:
 
 
 func _on_derrota_pressed() -> void:
-	get_tree().call_group("player","_on_prosseguir_pressed")
+	AutoloadScript.reset_all()
+	get_tree().call_group("world", "derrotado")
 	pass # Replace with function body.
-
+	
 func _on_vencer_pressed() -> void:
+	AutoloadScript.itensDropados = 3
 	get_tree().call_group("player","_on_prosseguir_pressed")
 	pass # Replace with function body.

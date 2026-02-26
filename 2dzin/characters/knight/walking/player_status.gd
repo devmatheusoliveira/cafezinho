@@ -28,6 +28,9 @@ func gain_experience(amount):
 
 func level_up():
 	AutoloadScript.level += 1
+	AutoloadScript.max_hp += 100
+	AutoloadScript.strength += 50
+	AutoloadScript.defense += 1
 	experience_required = get_required_experience(AutoloadScript.level + 1)
 
 	#var stats = ['max_hp', 'strength', 'defense']

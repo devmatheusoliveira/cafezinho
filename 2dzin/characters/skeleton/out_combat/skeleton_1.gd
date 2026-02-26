@@ -44,13 +44,14 @@ func _physics_process(_delta):
 
 func update_target_position(target_location):
 	await get_tree().physics_frame
-	var bolinha_location = bolinha.global_transform.origin
-	nav_agent.set_target_position(target_location)
-	if nav_agent.is_target_reachable():
-		LOCATION = 0
-		SPEED = 3.0
-		pass
-	else:
-		SPEED = 2.0
-		LOCATION = 1
-		nav_agent.set_target_position(bolinha_location)
+	if is_instance_valid(bolinha) and bolinha.is_inside_tree():
+		var bolinha_location = bolinha.global_transform.origin
+		nav_agent.set_target_position(target_location)
+		if nav_agent.is_target_reachable():
+			LOCATION = 0
+			SPEED = 3.0
+			pass
+		else:
+			SPEED = 2.0
+			LOCATION = 1
+			nav_agent.set_target_position(bolinha_location)

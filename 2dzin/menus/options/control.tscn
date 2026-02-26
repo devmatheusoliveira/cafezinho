@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvjv0cvntrjp4"]
+
+[ext_resource type="Script" path="res://menus/options/control.gd" id="1_6as2n"]
+[ext_resource type="FontFile" uid="uid://cd4p2xnoxudw2" path="res://menus/fonts/ChunkFive-Regular.otf" id="2_m5wi5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = 89.0
+offset_right = -51.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6as2n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = -122.0
+offset_right = 121.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2_m5wi5")
+theme_override_font_sizes/normal_font_size = 24
+text = "		Créditos"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+text = "		Matheus S Oliveira
+		Matheus Stanula
+		Thiago Salustiano
+		Enzo Y Hashimoto
+		Glaison L Passos"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Retornar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_m5wi5")
+text = "Retornar ao menu"
+
+[connection signal="pressed" from="VBoxContainer/Retornar" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="VBoxContainer/Retornar" to="." method="_on_retornar_pressed"]

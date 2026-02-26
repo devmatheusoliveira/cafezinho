@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://t3svny0rpa8d"]
+
+[ext_resource type="Script" path="res://characters/goblin_boss/goblin_boss_static.gd" id="1_jekv5"]
+[ext_resource type="PackedScene" uid="uid://ds2x00vb4tghy" path="res://characters/goblin_boss/Barbarian.glb" id="2_apnjn"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lota3"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sle2d"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_p58t3"]
+states/Idle/node = SubResource("AnimationNodeAnimation_lota3")
+states/Idle/position = Vector2(339, 111)
+states/Start/position = Vector2(227, 111)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_sle2d")]
+
+[node name="GoblinBossStatic" type="Node3D" groups=["boss"]]
+script = ExtResource("1_jekv5")
+
+[node name="Barbarian" parent="." instance=ExtResource("2_apnjn")]
+
+[node name="Skeleton3D" parent="Barbarian/Rig" index="0"]
+bones/1/position = Vector3(0, 0.389523, 0)
+bones/1/rotation = Quaternion(-1.11123e-10, 0.0431578, 2.57241e-09, 0.999068)
+bones/2/rotation = Quaternion(-6.93889e-18, 7.10543e-15, 4.93038e-32, 1)
+bones/3/rotation = Quaternion(8.27181e-25, 3.72529e-09, 0, 1)
+bones/4/position = Vector3(0.212007, 0.134132, 7.92996e-08)
+bones/4/rotation = Quaternion(-0.559081, -0.0602197, -0.642769, 0.520241)
+bones/5/rotation = Quaternion(2.37203e-08, -4.60539e-08, -0.498155, 0.867088)
+bones/7/rotation = Quaternion(-0.321254, -0.326934, 0.146695, 0.876579)
+bones/8/position = Vector3(8.34843e-10, 0.0961252, -0.0575)
+bones/8/rotation = Quaternion(0.000131894, 0.000131888, -0.706623, 0.707591)
+bones/11/position = Vector3(-0.212007, 0.134132, 8.6814e-08)
+bones/11/rotation = Quaternion(-0.617417, 0.0801562, 0.617052, 0.481266)
+bones/12/rotation = Quaternion(3.43757e-08, 5.43612e-08, 0.521209, 0.853429)
+bones/14/rotation = Quaternion(-0.319583, 0.302294, -0.228382, 0.86852)
+bones/15/position = Vector3(-1.5736e-08, 0.0961251, -0.0575)
+bones/15/rotation = Quaternion(0.000370429, 0.000436308, 0.706723, 0.70749)
+bones/19/rotation = Quaternion(-5.80608e-11, -0.0313417, -1.88012e-09, 0.999509)
+bones/22/position = Vector3(0.170945, 0.113587, 1.59941e-08)
+bones/22/rotation = Quaternion(0.993466, 0.0834171, 0.0743876, 0.0231136)
+bones/23/rotation = Quaternion(0.227284, 6.62221e-08, -1.55766e-07, 0.973829)
+bones/24/rotation = Quaternion(-0.534031, -0.208534, 0.0484804, 0.817909)
+bones/25/rotation = Quaternion(-9.74065e-09, 0.920355, -0.391084, 7.8309e-08)
+bones/26/position = Vector3(-0.170945, 0.113587, 1.55755e-08)
+bones/26/rotation = Quaternion(0.996733, -0.0299479, 0.0312932, 0.0681768)
+bones/27/rotation = Quaternion(0.297487, -6.39308e-08, 2.08169e-07, 0.954726)
+bones/28/rotation = Quaternion(-0.571522, 0.114351, -0.0105852, 0.812511)
+bones/29/rotation = Quaternion(3.03591e-08, 0.920355, -0.391084, -6.95338e-08)
+bones/30/rotation = Quaternion(0.707107, -2.29302e-07, -4.60552e-08, 0.707107)
+bones/31/position = Vector3(0.202182, 0.0259903, 0.205181)
+bones/31/rotation = Quaternion(-0.707107, -7.05285e-08, -7.05285e-08, 0.707107)
+bones/32/rotation = Quaternion(9.65792e-09, 1.77955e-09, 0.985719, -0.168398)
+bones/33/position = Vector3(-2.60494e-08, 0.213436, -5.1715e-09)
+bones/33/rotation = Quaternion(-1.01273e-07, 0.391084, 0.920355, -3.35091e-08)
+bones/34/position = Vector3(8.58988e-09, 0.16565, -2.40963e-09)
+bones/35/rotation = Quaternion(1, -2.33136e-09, 1.99777e-07, -1.34211e-15)
+bones/37/rotation = Quaternion(0.707107, -3.82385e-08, 1.45009e-07, 0.707107)
+bones/38/rotation = Quaternion(-0.707107, -7.05285e-08, -7.05285e-08, 0.707107)
+bones/39/rotation = Quaternion(-5.83589e-09, 6.43837e-10, 0.994809, 0.101756)
+bones/40/position = Vector3(-1.11482e-08, 0.213436, -2.50942e-15)
+bones/40/rotation = Quaternion(-1.05796e-07, 0.391084, 0.920355, -2.58643e-08)
+bones/41/position = Vector3(-6.31128e-09, 0.16565, 2.70695e-09)
+bones/42/rotation = Quaternion(1, 3.76526e-09, 1.94879e-07, 7.45058e-09)
+bones/44/rotation = Quaternion(-0.707107, -7.27951e-08, -7.27951e-08, 0.707107)
+bones/45/position = Vector3(0.520841, 0.786958, -0.0576373)
+bones/45/rotation = Quaternion(0.794627, -1.11759e-07, 0.607098, -5.96046e-08)
+bones/46/rotation = Quaternion(-0.707107, -7.27951e-08, -7.27951e-08, 0.707107)
+bones/47/position = Vector3(-0.510844, 0.786958, 0.0597369)
+bones/47/rotation = Quaternion(0.758253, 1.52737e-07, -0.651961, 1.11759e-08)
+
+[node name="1H_Axe_Offhand" parent="Barbarian/Rig/Skeleton3D" index="0"]
+transform = Transform3D(4.08362e-07, 0.262864, 0.964832, 0.999998, -0.00136898, 0.000372833, 0.00141912, 0.964831, -0.262863, 0.516483, 0.63559, 0.0138281)
+
+[node name="Barbarian_Round_Shield" parent="Barbarian/Rig/Skeleton3D" index="1"]
+transform = Transform3D(1.96872e-07, 0.262863, 0.964833, 0.999998, -0.0013715, 0.000373738, 0.00142179, 0.964832, -0.262863, 0.662602, 0.63567, -0.0428724)
+
+[node name="1H_Axe" parent="Barbarian/Rig/Skeleton3D" index="2"]
+transform = Transform3D(-0.000255599, -0.151022, 0.98853, 0.999999, -0.00108565, 9.2298e-05, 0.00105956, 0.988529, 0.151023, -0.496011, 0.639958, 0.139734)
+
+[node name="2H_Axe" parent="Barbarian/Rig/Skeleton3D" index="3"]
+transform = Transform3D(-0.000255599, -0.151022, 0.98853, 0.999999, -0.00108565, 9.2298e-05, 0.00105956, 0.988529, 0.151023, -0.496011, 0.639958, 0.139734)
+
+[node name="Mug" parent="Barbarian/Rig/Skeleton3D" index="4"]
+transform = Transform3D(-0.000255599, -0.151022, 0.98853, 0.999999, -0.00108565, 9.2298e-05, 0.00105956, 0.988529, 0.151023, -0.488542, 0.339446, 0.0910314)
+
+[node name="Barbarian_Hat" parent="Barbarian/Rig/Skeleton3D" index="5"]
+transform = Transform3D(0.99972, -1.40143e-09, 0.0236466, 1.39341e-09, 1, 3.55686e-10, -0.0236466, -3.22637e-10, 0.99972, -7.55726e-09, 1.19973, -1.39052e-07)
+
+[node name="Barbarian_Cape" parent="Barbarian/Rig/Skeleton3D" index="6"]
+transform = Transform3D(0.996275, -5.14962e-09, 0.0862353, 5.13043e-09, 1, 4.44077e-10, -0.0862353, 1.88007e-15, 0.996275, -1.91641e-06, 1.19973, 2.59003e-08)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Barbarian")
+tree_root = SubResource("AnimationNodeStateMachine_p58t3")
+anim_player = NodePath("../Barbarian/AnimationPlayer")
+
+[editable path="Barbarian"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://rrmbx5vuycxl"]
+[gd_scene load_steps=7 format=3 uid="uid://rrmbx5vuycxl"]
 
 [ext_resource type="Script" path="res://levels/cidade_medieval.gd" id="1_7gcig"]
 [ext_resource type="PackedScene" uid="uid://dyyqequcy81tu" path="res://medieval_cene/Cidade+Medieval.tscn" id="1_at3sr"]
 [ext_resource type="PackedScene" uid="uid://ck18pvvx0k8cv" path="res://characters/skeleton/out_combat/exibir_inimigos.tscn" id="2_1s8m3"]
-[ext_resource type="PackedScene" uid="uid://dnpluas83s5en" path="res://characters/knight/walking/player.tscn" id="3_txn1a"]
+[ext_resource type="PackedScene" uid="uid://cdhvfrbnvc8sp" path="res://personagem_fora_de_combate/personagem_fora_combate.tscn" id="5_7wx1l"]
+[ext_resource type="PackedScene" uid="uid://cqecj66e7s8xy" path="res://characters/skeleton_boss/skeleton_boss_static.tscn" id="5_m0gp1"]
 
 [sub_resource type="Environment" id="Environment_4vljh"]
 background_mode = 1
@@ -18,9 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16108, 0, 0.353379)
 [node name="Esqueleto" parent="." instance=ExtResource("2_1s8m3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47745, -0.0455028, 1.83762)
 
-[node name="Player" parent="." instance=ExtResource("3_txn1a")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 41.6102, 1, 40.6056)
-
 [node name="Esqueleto2" parent="." instance=ExtResource("2_1s8m3")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.9549, -0.0910056, 40.0774)
 
@@ -32,5 +30,17 @@ transform = Transform3D(0.430968, -0.902367, 0, 0.127051, 0.0606792, 0.990038, -
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4vljh")
+
+[node name="SkeletonBossStatic" parent="." instance=ExtResource("5_m0gp1")]
+transform = Transform3D(0.0931873, 0, 0.995649, 0, 1, 0, -0.995649, 0, 0.0931873, 28.334, 0.326798, 22.446)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("5_7wx1l")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 21.0991, 0, 0)
+
+[node name="Esqueleto4" parent="." instance=ExtResource("2_1s8m3")]
+transform = Transform3D(0.985638, 0, 0.168868, 0, 1, 0, -0.168868, 0, 0.985638, 11.2558, -0.364022, 22.8497)
+
+[node name="Esqueleto5" parent="." instance=ExtResource("2_1s8m3")]
+transform = Transform3D(0.985638, 0, 0.168868, 0, 1, 0, -0.168868, 0, 0.985638, -0.966818, -0.181624, 21.6645)
 
 [editable path="CidadeMedieval"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://u5nnetx4x4wo"]
+[gd_scene load_steps=18 format=3 uid="uid://u5nnetx4x4wo"]
 
 [ext_resource type="MeshLibrary" uid="uid://byte2ftepu57" path="res://mesh_tilemap/nature_mesh.tres" id="1_epw0i"]
 [ext_resource type="PackedScene" uid="uid://hgrmgwjektql" path="res://assets/nature/FBX format/canoe.fbx" id="2_44a2g"]
@@ -23,6 +23,10 @@ size = Vector3(0.24176, 0.20462, 1.10107)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_413id"]
 size = Vector3(1, 1, 0.871216)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6sx5q"]
+height = 0.363664
+radius = 0.274116
 
 [node name="cenario" type="Node3D"]
 
@@ -351,6 +355,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39469, 0.0652637, 6.56339)
 
 [node name="campfire_stones" parent="." instance=ExtResource("8_t8lvt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39469, 0.0652637, 6.56339)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="campfire_stones"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="campfire_stones/StaticBody3D"]
+transform = Transform3D(1, -6.0536e-08, -2.38419e-07, 3.06405e-07, 1.00004, -3.72529e-09, 0, 1.93715e-07, 1, -0.0263104, 0.0724317, -7.00951e-05)
+shape = SubResource("CylinderShape3D_6sx5q")
 
 [node name="Node3D" parent="." instance=ExtResource("11_pe54q")]
 transform = Transform3D(0.580646, 0, -0.814156, 0, 1, 0, 0.814156, 0, 0.580646, 8.56461, 0, 7.88253)

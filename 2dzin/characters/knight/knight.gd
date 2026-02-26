@@ -7,13 +7,14 @@ extends CharacterBody3D
 @onready var derrota = $InitialHUD/Derrota
 @onready var sucess = $InitialHUD/Sucesso
 @onready var vitoria = $InitialHUD/Venceu
-var damage = 400
-var life = 1200
+var damage = AutoloadScript.get_strength()
+var life = AutoloadScript.get_hp()
+var max_hp = AutoloadScript.get_hp_total()
+var pontos_defesa = AutoloadScript.get_defense()
+var agility = AutoloadScript.get_agility()
 var defesa: bool = false
 var counter: bool = false
-var pontos_defesa = 10
 var turn = true
-var agility = 1;
 
 func _ready() -> void:
 	randomize()
@@ -37,6 +38,7 @@ func receive_attack(damage):
 		defesa = false
 	else:
 		animation_tree.set("parameters/conditions/hit", true)
+		AutoloadScript.current_life -= damage
 		life -= damage
 
 func _on_atacar_pressed() -> void:
@@ -82,10 +84,11 @@ func _on_defender_pressed() -> void:
 
 func defence_handler(damage):
 	var random = randi() % pontos_defesa
-	if(random < 3):
+	if(random < 6):
 		animation_tree.set("parameters/conditions/hit", true)
+		AutoloadScript.current_life -= damage
 		life -= damage
-	elif(random < 6):
+	elif(random < -1):
 		animation_tree.set("parameters/conditions/defend", true)
 		life -= damage/2
 	else:

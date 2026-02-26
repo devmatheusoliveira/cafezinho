@@ -1,9 +1,10 @@
 extends CharacterBody3D
 
 @onready var animation_tree = $AnimationTree
-var life = 1200
+var life = 2000
 var turn: bool = false; # Define se é o turno do inimigo
 const base_damage = 200
+var morreu = 0
 
 func _ready() -> void:
 	randomize()

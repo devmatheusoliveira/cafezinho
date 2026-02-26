@@ -7,16 +7,13 @@ const JUMP_VELOCITY = 4.5
 @onready var animation_tree = $AnimationTree
 @onready var model = $Knight
 @onready var label = $CanvasLayer/VBoxContainer/Label
+@onready var life_bar = $InitialHUD/MarginContainer/vida_exp/Life
 
 func _physics_process(delta: float) -> void:
 	label.update_text(AutoloadScript.level,AutoloadScript.exp, AutoloadScript.exp)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -36,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		#animation_tree.set("parameters/Transition/transition_request", "andar")
 	#else:
 		#animation_tree.set("parameters/Transition/transition_request", "andar")
-
+	update_life_bar()
 	move_and_slide()
 
 @export var sensitivity: float = 0.005  # Ajustável no editor
@@ -51,3 +48,7 @@ func _input(event):
 		# Rotação vertical (x) com clamp
 		$CameraPivot.rotation.x -= event.relative.y * sensitivity
 		$CameraPivot.rotation.x = clamp($CameraPivot.rotation.x, deg_to_rad(min_vertical_angle), deg_to_rad(max_vertical_angle))
+
+func update_life_bar():
+	life_bar.set_value(AutoloadScript.current_life)
+	life_bar.max_value = AutoloadScript.max_hp

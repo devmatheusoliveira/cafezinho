@@ -1,0 +1,167 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwrijrmwc8dl1"]
+
+[ext_resource type="Script" path="res://characters/goblin_boss/basic_hud_goblin_boss.gd" id="1_ijo74"]
+[ext_resource type="Theme" uid="uid://bdredca70kkn5" path="res://styles/button.css" id="2_m8awf"]
+[ext_resource type="FontFile" uid="uid://b5ninvd8rqnfe" path="res://styles/MedievalSharp-Regular.ttf" id="3_2aylv"]
+[ext_resource type="PackedScene" uid="uid://cqb1h3gfe8snc" path="res://assets/level_assets/player_gui/ExperienceBar.tscn" id="4_ab2yc"]
+[ext_resource type="Script" path="res://characters/skeleton/out_combat/label.gd" id="5_yffga"]
+[ext_resource type="Script" path="res://characters/knight/walking/player_status.gd" id="6_7jfie"]
+
+[sub_resource type="Gradient" id="Gradient_eom2i"]
+colors = PackedColorArray(0, 0, 0, 1, 0.821505, 0.185535, 0.274536, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5kde1"]
+gradient = SubResource("Gradient_eom2i")
+width = 800
+height = 32
+fill_to = Vector2(0.00970874, 0)
+
+[sub_resource type="Gradient" id="Gradient_5wk3o"]
+colors = PackedColorArray(0, 0.898039, 0, 1, 0.227561, 0.642798, 0.364352, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l21di"]
+gradient = SubResource("Gradient_5wk3o")
+width = 800
+height = 32
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
+
+[node name="InitialHUD" type="CanvasLayer" groups=["combat_hud"]]
+script = ExtResource("1_ijo74")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -85.0
+offset_right = 539.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="atacar" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_m8awf")
+theme_override_font_sizes/font_size = 48
+text = "Atacar"
+
+[node name="defender" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_m8awf")
+theme_override_font_sizes/font_size = 48
+text = "Defender"
+
+[node name="Sucesso" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="texto" type="Label" parent="Sucesso"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2aylv")
+theme_override_font_sizes/font_size = 30
+text = "Você conseguiu fugir!"
+
+[node name="prosseguir" type="Button" parent="Sucesso"]
+layout_mode = 2
+theme = ExtResource("2_m8awf")
+text = "Prosseguir"
+
+[node name="Derrota" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Derrota"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2aylv")
+theme_override_font_sizes/font_size = 50
+text = "Você perdeu :("
+
+[node name="derrota" type="Button" parent="Derrota"]
+layout_mode = 2
+theme = ExtResource("2_m8awf")
+theme_override_fonts/font = ExtResource("3_2aylv")
+text = "Voltar ao menu"
+
+[node name="Venceu" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Venceu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2aylv")
+theme_override_font_sizes/font_size = 50
+text = "Você venceu :D"
+
+[node name="vencer" type="Button" parent="Venceu"]
+layout_mode = 2
+theme = ExtResource("2_m8awf")
+theme_override_fonts/font = ExtResource("3_2aylv")
+text = "Voltar ao mapa"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="vida_exp" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Life" type="TextureProgressBar" parent="MarginContainer/vida_exp"]
+layout_mode = 2
+max_value = 600.0
+value = 50.0
+texture_under = SubResource("GradientTexture2D_5kde1")
+texture_progress = SubResource("GradientTexture2D_l21di")
+
+[node name="ExperienceBar" parent="MarginContainer/vida_exp" groups=["experience_bar"] instance=ExtResource("4_ab2yc")]
+layout_mode = 2
+size_flags_horizontal = 0
+value = 0.0
+
+[node name="Label" type="Label" parent="MarginContainer/vida_exp"]
+layout_mode = 2
+script = ExtResource("5_yffga")
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("6_7jfie")
+
+[connection signal="pressed" from="HBoxContainer/atacar" to="." method="_on_atacar_pressed"]
+[connection signal="pressed" from="HBoxContainer/defender" to="." method="_on_defender_pressed"]
+[connection signal="pressed" from="Sucesso/prosseguir" to="." method="_on_prosseguir_pressed"]
+[connection signal="pressed" from="Derrota/derrota" to="." method="_on_derrota_pressed"]
+[connection signal="pressed" from="Venceu/vencer" to="." method="_on_vencer_pressed"]

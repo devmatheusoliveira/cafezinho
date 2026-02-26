@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bernt3uf2ghh3"]
+[gd_scene load_steps=12 format=3 uid="uid://bernt3uf2ghh3"]
 
 [ext_resource type="Script" path="res://basic_hud.gd" id="1_1kmnx"]
 [ext_resource type="Theme" uid="uid://bdredca70kkn5" path="res://styles/button.css" id="1_ouvnl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cqb1h3gfe8snc" path="res://assets/level_assets/player_gui/ExperienceBar.tscn" id="3_uqm3j"]
 [ext_resource type="Script" path="res://characters/skeleton/out_combat/label.gd" id="5_e0d3s"]
 [ext_resource type="Script" path="res://characters/knight/walking/player_status.gd" id="6_q1opx"]
+[ext_resource type="Script" path="res://status.gd" id="7_5q0yo"]
 
 [sub_resource type="Gradient" id="Gradient_eom2i"]
 colors = PackedColorArray(0, 0, 0, 1, 0.821505, 0.185535, 0.274536, 1)
@@ -165,6 +166,15 @@ script = ExtResource("5_e0d3s")
 
 [node name="Node3D" type="Node3D" parent="."]
 script = ExtResource("6_q1opx")
+
+[node name="Status" type="VBoxContainer" parent="."]
+offset_left = 933.0
+offset_right = 1152.0
+offset_bottom = 281.0
+
+[node name="Status" type="Label" parent="Status"]
+layout_mode = 2
+script = ExtResource("7_5q0yo")
 
 [connection signal="pressed" from="HBoxContainer/atacar" to="." method="_on_atacar_pressed"]
 [connection signal="pressed" from="HBoxContainer/defender" to="." method="_on_defender_pressed"]

@@ -1,32 +1,37 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgkr37q8dan14"]
+[gd_scene load_steps=15 format=3 uid="uid://dgkr37q8dan14"]
 
+[ext_resource type="Script" path="res://fight_scenes/trocar_cena.gd" id="1_q2rh3"]
 [ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="1_qu2yf"]
 [ext_resource type="PackedScene" uid="uid://cukphbe2kspel" path="res://characters/knight/knight.tscn" id="2_tth80"]
-[ext_resource type="Theme" uid="uid://bdredca70kkn5" path="res://styles/button.css" id="3_w2r8v"]
-[ext_resource type="FontFile" uid="uid://b5ninvd8rqnfe" path="res://styles/MedievalSharp-Regular.ttf" id="4_i0j3o"]
-[ext_resource type="PackedScene" uid="uid://cqb1h3gfe8snc" path="res://assets/level_assets/player_gui/ExperienceBar.tscn" id="5_5sx6b"]
+[ext_resource type="Script" path="res://characters/goblin_boss/basic_hud_skeleton_boss.gd" id="5_2mphs"]
 [ext_resource type="PackedScene" uid="uid://c8lrxj1cyeaef" path="res://characters/skeleton_boss/skeleton_boss_fight.tscn" id="5_tggdq"]
+[ext_resource type="Theme" uid="uid://bdredca70kkn5" path="res://styles/button.css" id="5_u84ga"]
+[ext_resource type="FontFile" uid="uid://b5ninvd8rqnfe" path="res://styles/MedievalSharp-Regular.ttf" id="6_ihkt3"]
+[ext_resource type="PackedScene" uid="uid://cqb1h3gfe8snc" path="res://assets/level_assets/player_gui/ExperienceBar.tscn" id="7_ygxpo"]
+[ext_resource type="Script" path="res://characters/skeleton/out_combat/label.gd" id="8_cddpc"]
+[ext_resource type="Script" path="res://characters/knight/walking/player_status.gd" id="9_6m5qe"]
 
-[sub_resource type="Gradient" id="Gradient_afsn0"]
+[sub_resource type="Gradient" id="Gradient_eom2i"]
 colors = PackedColorArray(0, 0, 0, 1, 0.821505, 0.185535, 0.274536, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_i6bpu"]
-gradient = SubResource("Gradient_afsn0")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5kde1"]
+gradient = SubResource("Gradient_eom2i")
 width = 800
 height = 32
 fill_to = Vector2(0.00970874, 0)
 
-[sub_resource type="Gradient" id="Gradient_rkeh3"]
+[sub_resource type="Gradient" id="Gradient_5wk3o"]
 colors = PackedColorArray(0, 0.898039, 0, 1, 0.227561, 0.642798, 0.364352, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rcrvf"]
-gradient = SubResource("Gradient_rkeh3")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l21di"]
+gradient = SubResource("Gradient_5wk3o")
 width = 800
 height = 32
 fill_from = Vector2(1, 0)
 fill_to = Vector2(0, 0)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" groups=["world"]]
+script = ExtResource("1_q2rh3")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_qu2yf")
@@ -42,6 +47,7 @@ data = {
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -1.42976, 0.285, 0.780134)
 
 [node name="InitialHUD" type="CanvasLayer" parent="Knight" groups=["combat_hud"]]
+script = ExtResource("5_2mphs")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Knight/InitialHUD"]
 anchors_preset = 2
@@ -56,21 +62,15 @@ theme_override_constants/separation = 10
 
 [node name="atacar" type="Button" parent="Knight/InitialHUD/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_w2r8v")
+theme = ExtResource("5_u84ga")
 theme_override_font_sizes/font_size = 48
 text = "Atacar"
 
 [node name="defender" type="Button" parent="Knight/InitialHUD/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_w2r8v")
+theme = ExtResource("5_u84ga")
 theme_override_font_sizes/font_size = 48
 text = "Defender"
-
-[node name="fugir" type="Button" parent="Knight/InitialHUD/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_w2r8v")
-theme_override_font_sizes/font_size = 48
-text = "Fugir"
 
 [node name="Sucesso" type="VBoxContainer" parent="Knight/InitialHUD"]
 visible = false
@@ -90,13 +90,13 @@ size_flags_vertical = 4
 
 [node name="texto" type="Label" parent="Knight/InitialHUD/Sucesso"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_i0j3o")
+theme_override_fonts/font = ExtResource("6_ihkt3")
 theme_override_font_sizes/font_size = 30
 text = "Você conseguiu fugir!"
 
 [node name="prosseguir" type="Button" parent="Knight/InitialHUD/Sucesso"]
 layout_mode = 2
-theme = ExtResource("3_w2r8v")
+theme = ExtResource("5_u84ga")
 text = "Prosseguir"
 
 [node name="Derrota" type="VBoxContainer" parent="Knight/InitialHUD"]
@@ -115,14 +115,14 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Knight/InitialHUD/Derrota"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_i0j3o")
+theme_override_fonts/font = ExtResource("6_ihkt3")
 theme_override_font_sizes/font_size = 50
 text = "Você perdeu :("
 
-[node name="Button" type="Button" parent="Knight/InitialHUD/Derrota"]
+[node name="derrota" type="Button" parent="Knight/InitialHUD/Derrota"]
 layout_mode = 2
-theme = ExtResource("3_w2r8v")
-theme_override_fonts/font = ExtResource("4_i0j3o")
+theme = ExtResource("5_u84ga")
+theme_override_fonts/font = ExtResource("6_ihkt3")
 text = "Voltar ao menu"
 
 [node name="Venceu" type="VBoxContainer" parent="Knight/InitialHUD"]
@@ -141,14 +141,14 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Knight/InitialHUD/Venceu"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_i0j3o")
+theme_override_fonts/font = ExtResource("6_ihkt3")
 theme_override_font_sizes/font_size = 50
 text = "Você venceu :D"
 
-[node name="Button" type="Button" parent="Knight/InitialHUD/Venceu"]
+[node name="vencer" type="Button" parent="Knight/InitialHUD/Venceu"]
 layout_mode = 2
-theme = ExtResource("3_w2r8v")
-theme_override_fonts/font = ExtResource("4_i0j3o")
+theme = ExtResource("5_u84ga")
+theme_override_fonts/font = ExtResource("6_ihkt3")
 text = "Voltar ao mapa"
 
 [node name="MarginContainer" type="MarginContainer" parent="Knight/InitialHUD"]
@@ -165,12 +165,20 @@ size_flags_horizontal = 0
 layout_mode = 2
 max_value = 600.0
 value = 50.0
-texture_under = SubResource("GradientTexture2D_i6bpu")
-texture_progress = SubResource("GradientTexture2D_rcrvf")
+texture_under = SubResource("GradientTexture2D_5kde1")
+texture_progress = SubResource("GradientTexture2D_l21di")
 
-[node name="ExperienceBar" parent="Knight/InitialHUD/MarginContainer/vida_exp" instance=ExtResource("5_5sx6b")]
+[node name="ExperienceBar" parent="Knight/InitialHUD/MarginContainer/vida_exp" groups=["experience_bar"] instance=ExtResource("7_ygxpo")]
 layout_mode = 2
 size_flags_horizontal = 0
+value = 0.0
+
+[node name="Label" type="Label" parent="Knight/InitialHUD/MarginContainer/vida_exp"]
+layout_mode = 2
+script = ExtResource("8_cddpc")
+
+[node name="Node3D" type="Node3D" parent="Knight/InitialHUD"]
+script = ExtResource("9_6m5qe")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.974047, -0.0667169, 0.216289, 0, 0.955572, 0.294757, -0.226345, -0.287107, 0.930772, -0.16422, 2.51083, 2.89987)
@@ -181,6 +189,8 @@ light_energy = 2.293
 [node name="Skeleton" parent="." instance=ExtResource("5_tggdq")]
 transform = Transform3D(0.966707, 0, -0.255884, 0, 1, 0, 0.255884, 0, 0.966707, -0.17257, 0.28105, -1.56884)
 
-[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/atacar" to="Knight" method="_on_atacar_pressed"]
-[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/defender" to="Knight" method="_on_defender_pressed"]
-[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/fugir" to="Knight" method="_on_fugir_pressed"]
+[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/atacar" to="Knight/InitialHUD" method="_on_atacar_pressed"]
+[connection signal="pressed" from="Knight/InitialHUD/HBoxContainer/defender" to="Knight/InitialHUD" method="_on_defender_pressed"]
+[connection signal="pressed" from="Knight/InitialHUD/Sucesso/prosseguir" to="Knight/InitialHUD" method="_on_prosseguir_pressed"]
+[connection signal="pressed" from="Knight/InitialHUD/Derrota/derrota" to="Knight/InitialHUD" method="_on_derrota_pressed"]
+[connection signal="pressed" from="Knight/InitialHUD/Venceu/vencer" to="Knight/InitialHUD" method="_on_vencer_pressed"]

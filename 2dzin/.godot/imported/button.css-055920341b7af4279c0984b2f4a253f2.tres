@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=3 format=3]
 
-[ext_resource type="FontFile" uid="uid://b5ninvd8rqnfe" path="res://styles/MedievalSharp-Regular.ttf" id="1_dolu5"]
+[ext_resource type="FontFile" uid="uid://b5ninvd8rqnfe" path="res://styles/MedievalSharp-Regular.ttf" id="1_egoc8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm0wx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5alci"]
 content_margin_left = 20.0
 content_margin_top = 10.0
 content_margin_right = 20.0
@@ -16,5 +16,5 @@ corner_radius_bottom_left = 8
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/font_sizes/font_size = 18
-Button/fonts/font = ExtResource("1_dolu5")
-Button/styles/normal = SubResource("StyleBoxFlat_wm0wx")
+Button/fonts/font = ExtResource("1_egoc8")
+Button/styles/normal = SubResource("StyleBoxFlat_5alci")

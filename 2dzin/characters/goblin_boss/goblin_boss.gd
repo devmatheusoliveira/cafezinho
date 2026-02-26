@@ -1,21 +1,28 @@
 extends CharacterBody3D
 
 @onready var animation_tree = $AnimationTree
-var life = 1200
+var life = 2000
 var turn: bool = false; # Define se é o turno do inimigo
 const base_damage = 200
+var morreu = 0
 
 func _ready() -> void:
 	randomize()
 	pass
 
 func _physics_process(delta: float) -> void:
+	if not is_instance_valid(animation_tree) or not animation_tree.is_inside_tree():
+		return
+		
 	var state_machine = animation_tree.get("parameters/playback") as AnimationNodeStateMachinePlayback
 	var current_animation = state_machine.get_current_node()
 	
 	if life <= 0:
 		animation_tree.set("parameters/conditions/died", true)
 		get_tree().call_group("player","victory")
+		if (morreu == 0):
+			$"../Knight/InitialHUD/Node3D".gain_experience(50)
+			morreu = 1
 	if(current_animation != "Idle"):
 		animation_handler()
 	elif (turn == true && current_animation == "Idle"):
@@ -24,7 +31,8 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func attack():
-	
+	if not is_instance_valid(self) or not is_inside_tree():
+		return
 	animation_tree.set("parameters/conditions/attack", true)
 	pass
 

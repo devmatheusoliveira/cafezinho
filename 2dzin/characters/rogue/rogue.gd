@@ -4,6 +4,7 @@ extends CharacterBody3D
 var life = 1200
 var turn: bool = false; # Define se é o turno do inimigo
 const base_damage = 200
+var morreu = 0;
 
 func _ready() -> void:
 	randomize()
@@ -16,6 +17,9 @@ func _physics_process(delta: float) -> void:
 	if life <= 0:
 		animation_tree.set("parameters/conditions/died", true)
 		get_tree().call_group("player","victory")
+		if (morreu == 0):
+			$"../Knight/InitialHUD/Node3D".gain_experience(15)
+			morreu = 1
 	if(current_animation != "Idle"):
 		animation_handler()
 	elif (turn == true && current_animation == "Idle"):

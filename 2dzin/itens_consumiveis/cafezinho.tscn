@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkthhpxyd7gya"]
+
+[ext_resource type="ArrayMesh" uid="uid://b51pxerie6f7x" path="res://itens_consumiveis/cup-coffee.obj" id="1_dgb6w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_khvef"]
+radius = 0.119686
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ggfi"]
+animation = &"new_animation"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4m1sy"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6jv7g"]
+states/Start/position = Vector2(257, 93)
+states/new_animation/node = SubResource("AnimationNodeAnimation_8ggfi")
+states/new_animation/position = Vector2(426.344, 115)
+transitions = ["Start", "new_animation", SubResource("AnimationNodeStateMachineTransition_4m1sy")]
+graph_offset = Vector2(205.344, 0)
+
+[sub_resource type="Animation" id="Animation_37qsk"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 1, 0, 0.99034, 0, 0.138663)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 0.363249, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fubdn"]
+_data = {
+"new_animation": SubResource("Animation_37qsk")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cup-coffee" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0633438, 0, 1.99899, 0, 2, 0, -1.99899, 0, 0.0633438, 0, 0.195254, 0)
+mesh = ExtResource("1_dgb6w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cup-coffee"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cup-coffee/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0899407, 0)
+shape = SubResource("SphereShape3D_khvef")
+
+[node name="AnimationTree" type="AnimationTree" parent="Cup-coffee"]
+tree_root = SubResource("AnimationNodeStateMachine_6jv7g")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cup-coffee"]
+libraries = {
+"": SubResource("AnimationLibrary_fubdn")
+}
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Cup-coffee"]
+layers = 8
+omni_range = 0.394303

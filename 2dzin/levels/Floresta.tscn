@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://x7hw8tx5scpn"]
+[gd_scene load_steps=7 format=3 uid="uid://x7hw8tx5scpn"]
 
+[ext_resource type="Script" path="res://levels/floresta.gd" id="1_j6i8y"]
 [ext_resource type="PackedScene" uid="uid://u5nnetx4x4wo" path="res://nature_cene/natureza.tscn" id="1_uash3"]
-[ext_resource type="PackedScene" uid="uid://dnpluas83s5en" path="res://characters/knight/walking/player.tscn" id="2_u378v"]
+[ext_resource type="PackedScene" uid="uid://det8sahhscsup" path="res://characters/rogue/rogue_chase.tscn" id="4_shy4r"]
+[ext_resource type="PackedScene" uid="uid://cdhvfrbnvc8sp" path="res://personagem_fora_de_combate/personagem_fora_combate.tscn" id="5_8t2ik"]
+[ext_resource type="PackedScene" uid="uid://t3svny0rpa8d" path="res://characters/goblin_boss/goblin_boss_static.tscn" id="5_ytywm"]
 
 [sub_resource type="Environment" id="Environment_ll1d1"]
 background_mode = 1
@@ -10,16 +13,70 @@ ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 fog_enabled = true
 
-[node name="Node3D" type="Node3D"]
+[node name="Floresta" type="Node3D" groups=["world"]]
+script = ExtResource("1_j6i8y")
 
 [node name="cenario" parent="." instance=ExtResource("1_uash3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20938, 0, -2.50943)
-
-[node name="Player" parent="." instance=ExtResource("2_u378v")]
-transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, -0.394664, 0.121919, 4.86934)
+transform = Transform3D(2.205, 0, 0, 0, 2.205, 0, 0, 0, 2.205, -2.20938, 0, -2.50943)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ll1d1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.401676, 0.915782, 0, -0.915782, -0.401676, 0, 0, 0)
+
+[node name="RogueChase" parent="." instance=ExtResource("4_shy4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00318136, -0.269767, 14.6744)
+
+[node name="PathFollow3D" parent="RogueChase/Path3D" index="0"]
+transform = Transform3D(-0.999905, 3.74659e-06, 0.0133158, 3.41058e-13, 0.999989, -0.000281363, -0.0133158, -0.000281337, -0.999904, -3.27629, 0.244025, -6.84816)
+
+[node name="RogueChase2" parent="." instance=ExtResource("4_shy4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9585, -0.212458, 15.3682)
+
+[node name="PathFollow3D" parent="RogueChase2/Path3D" index="0"]
+transform = Transform3D(-0.999905, 3.74659e-06, 0.0133158, 3.41058e-13, 0.999989, -0.000281363, -0.0133158, -0.000281337, -0.999904, -3.27629, 0.244025, -6.84816)
+
+[node name="RogueChase2" parent="RogueChase2" instance=ExtResource("4_shy4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.66295, -0.0982102, 5.97174)
+
+[node name="PathFollow3D" parent="RogueChase2/RogueChase2/Path3D" index="0"]
+transform = Transform3D(-0.999905, 3.74659e-06, 0.0133158, 3.41058e-13, 0.999989, -0.000281363, -0.0133158, -0.000281337, -0.999904, -3.27629, 0.244025, -6.84816)
+
+[node name="RogueChase3" parent="RogueChase2" instance=ExtResource("4_shy4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5781, -0.0671772, 18.0053)
+
+[node name="PathFollow3D" parent="RogueChase2/RogueChase3/Path3D" index="0"]
+transform = Transform3D(-0.999905, 3.74659e-06, 0.0133158, 3.41058e-13, 0.999989, -0.000281363, -0.0133158, -0.000281337, -0.999904, -3.27629, 0.244025, -6.84816)
+
+[node name="RogueChase2" parent="RogueChase2/RogueChase3" instance=ExtResource("4_shy4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.66295, 0.24775, 5.97174)
+
+[node name="PathFollow3D" parent="RogueChase2/RogueChase3/RogueChase2/Path3D" index="0"]
+transform = Transform3D(-0.999905, 3.74659e-06, 0.0133158, 3.41058e-13, 0.999989, -0.000281363, -0.0133158, -0.000281337, -0.999904, -3.27629, 0.244025, -6.84816)
+
+[node name="RogueChase3" parent="RogueChase2/RogueChase3" instance=ExtResource("4_shy4r")]
+transform = Transform3D(-0.998026, 0, 0.0628078, 0, 1, 0, -0.0628078, 0, -0.998026, -29.196, -0.495328, 6.40867)
+
+[node name="PathFollow3D" parent="RogueChase2/RogueChase3/RogueChase3/Path3D" index="0"]
+transform = Transform3D(-0.999905, 3.74659e-06, 0.0133158, 3.41058e-13, 0.999989, -0.000281363, -0.0133158, -0.000281337, -0.999904, -3.27629, 0.244025, -6.84816)
+
+[node name="RogueChase2" parent="RogueChase2/RogueChase3/RogueChase3" instance=ExtResource("4_shy4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.66295, 0.24775, 5.97174)
+
+[node name="PathFollow3D" parent="RogueChase2/RogueChase3/RogueChase3/RogueChase2/Path3D" index="0"]
+transform = Transform3D(-0.999905, 3.74658e-06, 0.0133158, 3.41058e-13, 0.999987, -0.000281363, -0.0133158, -0.000281336, -0.999904, -3.27629, 0.244025, -6.84816)
+
+[node name="GoblinBossStatic" parent="." instance=ExtResource("5_ytywm")]
+transform = Transform3D(-0.374206, 0, -0.331617, 0, 0.5, 0, 0.331617, 0, -0.374206, 21.1312, 0, 42.9953)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("5_8t2ik")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -7.58837, 0, 10.9499)
+
+[editable path="RogueChase"]
+[editable path="RogueChase2"]
+[editable path="RogueChase2/RogueChase2"]
+[editable path="RogueChase2/RogueChase3"]
+[editable path="RogueChase2/RogueChase3/RogueChase2"]
+[editable path="RogueChase2/RogueChase3/RogueChase3"]
+[editable path="RogueChase2/RogueChase3/RogueChase3/RogueChase2"]

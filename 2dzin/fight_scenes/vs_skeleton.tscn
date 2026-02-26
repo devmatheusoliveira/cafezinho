@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://web5fle4fkm5"]
+[gd_scene load_steps=6 format=3 uid="uid://web5fle4fkm5"]
 
 [ext_resource type="MeshLibrary" uid="uid://djwxjm6unu564" path="res://mesh_tilemap/chao_medieval_mesh.tres" id="1_ly4ij"]
+[ext_resource type="Script" path="res://fight_scenes/saida.gd" id="1_pksdx"]
 [ext_resource type="PackedScene" uid="uid://cukphbe2kspel" path="res://characters/knight/knight.tscn" id="2_o028u"]
 [ext_resource type="PackedScene" uid="uid://bernt3uf2ghh3" path="res://basic_hud.tscn" id="3_57w3c"]
-[ext_resource type="PackedScene" uid="uid://gvk0w03t2s80" path="res://characters/skeleton/in_combat/skeleton.tscn" id="4_m70cg"]
+[ext_resource type="PackedScene" uid="uid://gvk0w03t2s80" path="res://characters/skeleton/skeleton.tscn" id="4_m70cg"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_pksdx")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_ly4ij")
